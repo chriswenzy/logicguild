@@ -8,9 +8,31 @@ import { ArrowRight, Code, Database, Globe, Smartphone } from "lucide-react";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-grid-pattern">
-      {/* Background Glows */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] pointer-events-none" />
+      {/* Background Glows with parallax effect */}
+      <motion.div 
+        animate={{ 
+          x: [0, 20, 0],
+          y: [0, -20, 0],
+        }}
+        transition={{ 
+          duration: 10, 
+          repeat: Infinity, 
+          ease: "linear" 
+        }}
+        className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none" 
+      />
+      <motion.div 
+        animate={{ 
+          x: [0, -30, 0],
+          y: [0, 30, 0],
+        }}
+        transition={{ 
+          duration: 12, 
+          repeat: Infinity, 
+          ease: "linear" 
+        }}
+        className="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] pointer-events-none" 
+      />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl">
