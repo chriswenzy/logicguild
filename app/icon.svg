@@ -1,0 +1,12 @@
+<svg
+  width="32"
+  height="32"
+  viewBox="0 0 40 40"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M4 24L12 20V28L4 32V24Z" fill="#3B82F6" fill-opacity="0.7" />
+  <path d="M4 14L12 10V18L4 22V14Z" fill="#3B82F6" fill-opacity="0.85" />
+  <path d="M4 4L12 0V8L4 12V4Z" fill="#3B82F6" />
+  <path d="M12 28H32V34H12V28Z" fill="#3B82F6" />
+</svg>
