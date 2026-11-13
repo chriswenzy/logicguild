@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Mail, MessageSquare, Send, Clock, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
@@ -27,13 +28,18 @@ export default function ContactPage() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Contact Value Prop & Channels */}
-            <div className="lg:col-span-5">
-              <span className="text-primary text-xs font-bold tracking-widest uppercase mb-4 block">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="lg:col-span-5"
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-border text-xs font-bold tracking-widest text-primary uppercase mb-4">
                 Start A Conversation
-              </span>
+              </div>
               <h1 className="text-4xl sm:text-5xl font-heading font-extrabold text-primary tracking-tight mb-6">
                 Have a project in mind? <br />
-                <span className="text-primary-light">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-accent-subtle">
                   Let&apos;s build something great.
                 </span>
               </h1>
@@ -44,7 +50,11 @@ export default function ContactPage() {
               </p>
 
               <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-border shadow-xs">
+                <motion.div
+                  whileHover={{ scale: 1.02, x: 4 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-border shadow-xs hover:border-accent/40 hover:shadow-md transition-all cursor-pointer"
+                >
                   <div className="w-11 h-11 rounded-xl bg-slate-50 border border-border flex items-center justify-center text-primary shrink-0">
                     <Mail size={20} />
                   </div>
@@ -54,15 +64,19 @@ export default function ContactPage() {
                     </div>
                     <a
                       href="mailto:logicguildltd@gmail.com"
-                      className="text-sm font-bold text-primary hover:text-primary-light transition-colors"
+                      className="text-sm font-bold text-primary hover:text-accent transition-colors"
                     >
                       logicguildltd@gmail.com
                     </a>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-border shadow-xs">
-                  <div className="w-11 h-11 rounded-xl bg-slate-50 border border-border flex items-center justify-center text-primary shrink-0">
+                <motion.div
+                  whileHover={{ scale: 1.02, x: 4 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-border shadow-xs hover:border-accent/40 hover:shadow-md transition-all cursor-pointer"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-slate-50 border border-border flex items-center justify-center text-accent shrink-0">
                     <MessageSquare size={20} />
                   </div>
                   <div>
@@ -73,18 +87,18 @@ export default function ContactPage() {
                       href="https://wa.me/2347067435384"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm font-bold text-primary hover:text-primary-light transition-colors"
+                      className="text-sm font-bold text-primary hover:text-accent transition-colors"
                     >
                       +234 706 743 5384
                     </a>
                   </div>
-                </div>
+                </motion.div>
               </div>
 
               {/* Guarantees */}
               <div className="space-y-3 pt-6 border-t border-border text-xs text-text-secondary">
                 <div className="flex items-center gap-2">
-                  <Clock size={16} className="text-primary-light shrink-0" />
+                  <Clock size={16} className="text-accent shrink-0" />
                   <span>Prompt response within 24 business hours.</span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -96,13 +110,22 @@ export default function ContactPage() {
                   <span>LOGIC GUILD LIMITED · COMPANY REGISTRATION NO. 8969485</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Column: Clean Executive Proposal Form */}
-            <div className="lg:col-span-7 bg-white border border-border p-8 md:p-10 rounded-3xl shadow-sm relative overflow-hidden">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="lg:col-span-7 bg-white border border-border p-8 md:p-10 rounded-3xl shadow-sm relative overflow-hidden"
+            >
               {submitted ? (
-                <div className="py-16 text-center space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-slate-100 border border-border text-primary mx-auto flex items-center justify-center">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="py-16 text-center space-y-4"
+                >
+                  <div className="w-16 h-16 rounded-full bg-slate-100 border border-border text-accent mx-auto flex items-center justify-center">
                     <CheckCircle2 size={32} />
                   </div>
                   <h3 className="text-2xl font-heading font-bold text-primary">
@@ -113,7 +136,7 @@ export default function ContactPage() {
                     will review your project requirements and reply within 24
                     hours.
                   </p>
-                </div>
+                </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -125,7 +148,7 @@ export default function ContactPage() {
                         type="text"
                         required
                         placeholder="John Doe"
-                        className="w-full bg-slate-50 border border-border rounded-xl px-4 py-3 text-text-primary focus:bg-white focus:border-primary outline-none transition-colors text-sm"
+                        className="w-full bg-slate-50 border border-border rounded-xl px-4 py-3 text-text-primary focus:bg-white focus:border-accent outline-none transition-all text-sm shadow-2xs"
                         value={formState.name}
                         onChange={(e) =>
                           setFormState({ ...formState, name: e.target.value })
@@ -140,7 +163,7 @@ export default function ContactPage() {
                         type="email"
                         required
                         placeholder="john@company.com"
-                        className="w-full bg-slate-50 border border-border rounded-xl px-4 py-3 text-text-primary focus:bg-white focus:border-primary outline-none transition-colors text-sm"
+                        className="w-full bg-slate-50 border border-border rounded-xl px-4 py-3 text-text-primary focus:bg-white focus:border-accent outline-none transition-all text-sm shadow-2xs"
                         value={formState.email}
                         onChange={(e) =>
                           setFormState({ ...formState, email: e.target.value })
@@ -154,7 +177,7 @@ export default function ContactPage() {
                       Project Type
                     </label>
                     <select
-                      className="w-full bg-slate-50 border border-border rounded-xl px-4 py-3 text-text-primary focus:bg-white focus:border-primary outline-none transition-colors appearance-none text-sm"
+                      className="w-full bg-slate-50 border border-border rounded-xl px-4 py-3 text-text-primary focus:bg-white focus:border-accent outline-none transition-all appearance-none text-sm shadow-2xs"
                       value={formState.project}
                       onChange={(e) =>
                         setFormState({ ...formState, project: e.target.value })
@@ -176,7 +199,7 @@ export default function ContactPage() {
                       rows={5}
                       required
                       placeholder="Briefly describe what you'd like to build, your key requirements, and expected timeline..."
-                      className="w-full bg-slate-50 border border-border rounded-xl px-4 py-3 text-text-primary focus:bg-white focus:border-primary outline-none transition-colors resize-none text-sm leading-relaxed"
+                      className="w-full bg-slate-50 border border-border rounded-xl px-4 py-3 text-text-primary focus:bg-white focus:border-accent outline-none transition-all resize-none text-sm leading-relaxed shadow-2xs"
                       value={formState.message}
                       onChange={(e) =>
                         setFormState({ ...formState, message: e.target.value })
@@ -184,15 +207,18 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.02, y: -1 }}
+                    whileTap={{ scale: 0.97 }}
                     type="submit"
-                    className="w-full bg-primary hover:bg-primary-hover text-white font-bold py-4 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-md text-sm"
+                    className="w-full relative overflow-hidden bg-primary hover:bg-primary-hover text-white font-bold py-4 rounded-xl transition-colors flex items-center justify-center gap-2 shadow-md hover:shadow-lg text-sm cursor-pointer"
                   >
-                    Send Project Inquiry <Send size={16} />
-                  </button>
+                    <span>Send Project Inquiry</span>
+                    <Send size={16} />
+                  </motion.button>
                 </form>
               )}
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

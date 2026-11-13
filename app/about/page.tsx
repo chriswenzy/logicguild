@@ -1,40 +1,39 @@
+"use client";
+
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { ShieldCheck, Zap, HeartHandshake, Award } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import Reveal from "@/components/ui/Reveal";
-
-export const metadata = {
-  title: "About Us | LOGIC GUILD LIMITED",
-  description:
-    "Learn about LOGIC GUILD LIMITED (RC 8969485), our senior engineering team, and our commitment to delivering dependable digital solutions.",
-};
+import { motion } from "framer-motion";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 
 const stats = [
-  { label: "Established", value: "2020" },
-  { label: "Senior Engineers", value: "15+" },
-  { label: "Platforms Delivered", value: "100+" },
-  { label: "Client Satisfaction", value: "100%" },
+  { label: "Established", value: 2020, suffix: "" },
+  { label: "Senior Engineers", value: 15, suffix: "+" },
+  { label: "Platforms Delivered", value: 100, suffix: "+" },
+  { label: "Client Satisfaction", value: 100, suffix: "%" },
 ];
 
 const values = [
   {
-    icon: <ShieldCheck className="w-6 h-6 text-primary" />,
+    icon: <ShieldCheck className="w-6 h-6 text-primary group-hover:text-accent transition-colors" />,
     title: "Engineering Rigor",
     desc: "We build for long-term reliability. We avoid brittle hacks and shortcuts, selecting resilient, proven, and secure architectures.",
   },
   {
-    icon: <HeartHandshake className="w-6 h-6 text-primary-light" />,
+    icon: <HeartHandshake className="w-6 h-6 text-accent group-hover:text-primary transition-colors" />,
     title: "Clear Transparency",
     desc: "We communicate plainly, early, and constructively. You have direct access to lead engineers with zero hidden agendas or technical jargon.",
   },
   {
-    icon: <Zap className="w-6 h-6 text-primary" />,
+    icon: <Zap className="w-6 h-6 text-primary group-hover:text-accent transition-colors" />,
     title: "Disciplined Delivery",
     desc: "We take full accountability from initial scoping to live production, hitting agreed milestones on schedule with live staging previews.",
   },
   {
-    icon: <Award className="w-6 h-6 text-primary-light" />,
+    icon: <Award className="w-6 h-6 text-accent group-hover:text-primary transition-colors" />,
     title: "Empathetic Partnership",
     desc: "Technology serves people. We listen carefully, respect your domain expertise, and make every step of development effortless to follow.",
   },
@@ -56,7 +55,7 @@ export default function AboutPage() {
                 </span>
                 <h1 className="text-4xl sm:text-6xl font-heading font-extrabold text-primary tracking-tight mb-6">
                   Exceptional engineering. <br />
-                  <span className="text-primary-light">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-accent-subtle">
                     Dependable partnership.
                   </span>
                 </h1>
@@ -71,27 +70,38 @@ export default function AboutPage() {
 
                 <div className="grid grid-cols-2 gap-6">
                   {stats.map((stat) => (
-                    <div
+                    <motion.div
                       key={stat.label}
-                      className="border-l-3 border-primary pl-5 py-2 bg-slate-50 rounded-r-xl border border-border/50"
+                      whileHover={{ scale: 1.03, y: -2 }}
+                      transition={{ type: "spring", stiffness: 350, damping: 20 }}
+                      className="border-l-3 border-accent pl-5 py-2.5 bg-slate-50 rounded-r-xl border border-border/50 hover:bg-slate-100 transition-colors shadow-2xs"
                     >
                       <div className="text-3xl font-heading font-extrabold text-primary mb-1">
-                        {stat.value}
+                        <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                       </div>
                       <div className="text-xs font-semibold uppercase tracking-wider text-text-secondary">
                         {stat.label}
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
             </Reveal>
 
             <Reveal direction="left" delay={0.2}>
-              <div className="aspect-square bg-white border border-border rounded-3xl relative overflow-hidden group shadow-lg flex flex-col items-center justify-center p-12 text-center">
-                <Logo showText={false} size={90} />
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="aspect-square bg-white border border-border rounded-3xl relative overflow-hidden group shadow-lg hover:shadow-2xl hover:border-accent/40 transition-all flex flex-col items-center justify-center p-12 text-center"
+              >
+                <motion.div
+                  whileHover={{ rotate: 5, scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                >
+                  <Logo showText={false} size={90} />
+                </motion.div>
                 <div className="mt-8 font-heading font-bold text-2xl text-primary">
-                  LOGIC<span className="text-primary-light">GUILD</span>
+                  LOGIC<span className="text-accent">GUILD</span>
                 </div>
                 <p className="text-xs text-text-secondary mt-2 max-w-xs font-semibold tracking-wider uppercase">
                   LIMITED · RC 8969485
@@ -99,7 +109,7 @@ export default function AboutPage() {
                 <div className="mt-4 px-3.5 py-1.5 rounded-full bg-slate-50 border border-border text-[11px] font-medium text-text-muted">
                   Professional Software Engineering
                 </div>
-              </div>
+              </motion.div>
             </Reveal>
           </div>
         </div>
@@ -110,11 +120,11 @@ export default function AboutPage() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <Reveal direction="up" delay={0.2}>
-              <div className="p-10 md:p-12 rounded-3xl bg-white border border-border relative overflow-hidden h-full shadow-xs">
+              <SpotlightCard className="p-10 md:p-12 h-full shadow-xs group">
                 <div className="text-xs font-bold uppercase tracking-widest text-primary mb-4">
                   Our Mission
                 </div>
-                <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary mb-5">
+                <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary mb-5 group-hover:text-accent transition-colors">
                   Delivering technology that moves businesses forward
                 </h3>
                 <p className="text-text-secondary leading-relaxed text-sm md:text-base">
@@ -123,15 +133,15 @@ export default function AboutPage() {
                   uncompromising reliability—backed by transparent communication
                   and structured post-launch support.
                 </p>
-              </div>
+              </SpotlightCard>
             </Reveal>
 
             <Reveal direction="up" delay={0.3}>
-              <div className="p-10 md:p-12 rounded-3xl bg-white border border-border relative overflow-hidden h-full shadow-xs">
-                <div className="text-xs font-bold uppercase tracking-widest text-primary-light mb-4">
+              <SpotlightCard className="p-10 md:p-12 h-full shadow-xs group">
+                <div className="text-xs font-bold uppercase tracking-widest text-accent mb-4">
                   Our Vision
                 </div>
-                <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary mb-5">
+                <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary mb-5 group-hover:text-accent transition-colors">
                   The benchmark for reliable, approachable technical excellence
                 </h3>
                 <p className="text-text-secondary leading-relaxed text-sm md:text-base">
@@ -140,7 +150,7 @@ export default function AboutPage() {
                   expand online sales, and deliver world-class digital experiences
                   to their customers.
                 </p>
-              </div>
+              </SpotlightCard>
             </Reveal>
           </div>
         </div>
@@ -159,21 +169,31 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((v) => (
-              <div
+            {values.map((v, i) => (
+              <motion.div
                 key={v.title}
-                className="p-8 rounded-2xl bg-white border border-border hover:border-primary/40 transition-all shadow-xs"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="h-full"
               >
-                <div className="w-12 h-12 rounded-xl bg-slate-50 border border-border flex items-center justify-center mb-6">
-                  {v.icon}
-                </div>
-                <h3 className="text-lg font-heading font-bold text-primary mb-3">
-                  {v.title}
-                </h3>
-                <p className="text-text-secondary text-xs leading-relaxed">
-                  {v.desc}
-                </p>
-              </div>
+                <SpotlightCard className="p-8 h-full flex flex-col justify-start group">
+                  <motion.div
+                    whileHover={{ scale: 1.15, rotate: 3 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                    className="w-12 h-12 rounded-xl bg-slate-50 border border-border flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-all shadow-2xs"
+                  >
+                    {v.icon}
+                  </motion.div>
+                  <h3 className="text-lg font-heading font-bold text-primary mb-3 group-hover:text-accent transition-colors">
+                    {v.title}
+                  </h3>
+                  <p className="text-text-secondary text-xs leading-relaxed">
+                    {v.desc}
+                  </p>
+                </SpotlightCard>
+              </motion.div>
             ))}
           </div>
         </div>

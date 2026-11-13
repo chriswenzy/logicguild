@@ -31,6 +31,11 @@
 }
 
 @layer base {
+  ::selection {
+    background-color: #1E3A8A;
+    color: #FFFFFF;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-text-primary);
@@ -43,6 +48,7 @@
     font-family: var(--font-heading);
     letter-spacing: -0.02em;
     color: var(--color-primary);
+    text-wrap: balance;
   }
 }
 

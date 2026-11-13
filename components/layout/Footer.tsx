@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Logo from "../ui/Logo";
+import BackToTop from "../ui/BackToTop";
 
 const Footer = () => {
   return (
@@ -162,6 +163,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <BackToTop />
     </footer>
   );
 };

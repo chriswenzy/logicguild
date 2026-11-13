@@ -1,13 +1,11 @@
+"use client";
+
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { ArrowRight, Layout, ShoppingBag, Sliders, Palette, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
-
-export const metadata = {
-  title: "Services & Capabilities | LOGIC GUILD LIMITED",
-  description:
-    "Explore our core engineering services: web systems, e-commerce & Paystack integrations, administrative back-offices, and brand design.",
-};
+import { motion } from "framer-motion";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 
 const serviceDetails = [
   {
@@ -21,7 +19,7 @@ const serviceDetails = [
       "Timeframe Bidding & Outright Purchases",
       "Mobile-First Responsive Layouts",
     ],
-    icon: <ShoppingBag className="w-8 h-8 text-primary" />,
+    icon: <ShoppingBag className="w-8 h-8 text-primary group-hover:text-accent transition-colors" />,
   },
   {
     id: "admin-portals",
@@ -34,7 +32,7 @@ const serviceDetails = [
       "Role-Based Administrator Accounts",
       "Sales Reports & Customer Activity",
     ],
-    icon: <Sliders className="w-8 h-8 text-primary" />,
+    icon: <Sliders className="w-8 h-8 text-primary group-hover:text-accent transition-colors" />,
   },
   {
     id: "brand-design",
@@ -47,7 +45,7 @@ const serviceDetails = [
       "User Journey & Checkout Wireframing",
       "Marketing Collateral & Proposals",
     ],
-    icon: <Palette className="w-8 h-8 text-primary" />,
+    icon: <Palette className="w-8 h-8 text-primary group-hover:text-accent transition-colors" />,
   },
   {
     id: "support-cloud",
@@ -60,7 +58,7 @@ const serviceDetails = [
       "SSL Security Certificate Setup",
       "6 Months Free Technical Support",
     ],
-    icon: <Layout className="w-8 h-8 text-primary" />,
+    icon: <Layout className="w-8 h-8 text-primary group-hover:text-accent transition-colors" />,
   },
 ];
 
@@ -71,53 +69,70 @@ export default function ServicesPage() {
 
       <section className="pb-24">
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-3xl mb-16"
+          >
             <span className="text-primary text-xs font-bold tracking-widest uppercase mb-4 block">
               Core Capabilities
             </span>
             <h1 className="text-4xl md:text-6xl font-heading font-extrabold text-primary tracking-tight mb-6">
               Engineering solutions designed for{" "}
-              <span className="text-primary-light">measurable business growth</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-accent-subtle">
+                measurable business growth
+              </span>
             </h1>
             <p className="text-text-secondary text-base md:text-lg leading-relaxed">
               We provide turnkey software engineering, digital commerce, and
               administrative platforms that simplify operations and deliver
               reliable results.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-8">
-            {serviceDetails.map((service) => (
-              <div
+            {serviceDetails.map((service, idx) => (
+              <motion.div
                 key={service.id}
-                className="p-8 md:p-12 rounded-3xl bg-white border border-border shadow-xs hover:border-primary/40 transition-all duration-200 flex flex-col md:flex-row gap-8 md:gap-12 items-start md:items-center"
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
               >
-                <div className="md:w-5/12">
-                  <div className="w-16 h-16 bg-slate-50 border border-border rounded-2xl flex items-center justify-center mb-6 shadow-xs">
-                    {service.icon}
-                  </div>
-                  <h2 className="text-2xl font-heading font-bold text-primary mb-3">
-                    {service.title}
-                  </h2>
-                  <p className="text-text-secondary text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-
-                <div className="md:w-7/12 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-                  {service.features.map((feature) => (
-                    <div
-                      key={feature}
-                      className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl border border-border"
+                <SpotlightCard className="p-8 md:p-12 flex flex-col md:flex-row gap-8 md:gap-12 items-start md:items-center group">
+                  <div className="md:w-5/12">
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 3 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                      className="w-16 h-16 bg-slate-50 border border-border rounded-2xl flex items-center justify-center mb-6 shadow-xs group-hover:bg-primary group-hover:border-primary transition-all"
                     >
-                      <CheckCircle2 size={16} className="text-primary-light shrink-0" />
-                      <span className="font-semibold text-text-primary text-xs">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+                      {service.icon}
+                    </motion.div>
+                    <h2 className="text-2xl font-heading font-bold text-primary mb-3 group-hover:text-accent transition-colors">
+                      {service.title}
+                    </h2>
+                    <p className="text-text-secondary text-sm leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+
+                  <div className="md:w-7/12 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                    {service.features.map((feature) => (
+                      <motion.div
+                        key={feature}
+                        whileHover={{ scale: 1.03, x: 2 }}
+                        className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl border border-border hover:border-accent/30 hover:bg-white transition-all shadow-2xs"
+                      >
+                        <CheckCircle2 size={16} className="text-accent shrink-0" />
+                        <span className="font-semibold text-text-primary text-xs">
+                          {feature}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </SpotlightCard>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -161,12 +176,17 @@ export default function ServicesPage() {
                 title: "Launch & 6 Months Care",
                 desc: "We deploy to live cloud servers, hand over full ownership, and provide ongoing support.",
               },
-            ].map((item) => (
-              <div
+            ].map((item, i) => (
+              <motion.div
                 key={item.step}
-                className="p-6 rounded-2xl bg-white border border-border shadow-xs"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                className="p-6 rounded-2xl bg-white border border-border shadow-xs hover:shadow-md hover:border-accent/40 transition-all cursor-default"
               >
-                <div className="text-xl font-heading font-extrabold text-primary mb-2">
+                <div className="text-xl font-heading font-extrabold text-accent mb-2">
                   {item.step}
                 </div>
                 <h3 className="text-base font-heading font-bold text-primary mb-2">
@@ -175,7 +195,7 @@ export default function ServicesPage() {
                 <p className="text-text-secondary text-xs leading-relaxed">
                   {item.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -191,12 +211,15 @@ export default function ServicesPage() {
             Tell us about your requirements and we will prepare a clear,
             transparent proposal with fixed milestones.
           </p>
-          <Link
-            href="/contact"
-            className="group inline-flex items-center gap-3 bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-xl font-bold transition-all shadow-md text-sm"
-          >
-            Start a Conversation
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          <Link href="/contact">
+            <motion.button
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.96 }}
+              className="group inline-flex items-center gap-3 bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-xl font-bold transition-all shadow-md text-sm cursor-pointer"
+            >
+              <span>Start a Conversation</span>
+              <ArrowRight size={18} className="group-hover:translate-x-1.5 transition-transform" />
+            </motion.button>
           </Link>
         </div>
       </section>
