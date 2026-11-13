@@ -1,0 +1,15 @@
+<svg width="240" height="48" viewBox="0 0 240 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0, 0)">
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  
+  <path d="M8 6H20L17 14H8V6Z" fill="#0066FF"/>
+  <path d="M8 17H20L17 25H8V17Z" fill="#0066FF"/>
+  <path d="M8 28H38L42 34L37 39H8V28Z" fill="#0066FF"/>
+  <circle cx="36" cy="10" r="3" fill="#0066FF"/>
+</svg>
+  </g>
+  <g transform="translate(58, 4)">
+    <text x="0" y="28" font-family="'Sora', -apple-system, sans-serif" font-size="26" font-weight="800" letter-spacing="-0.03em" fill="#0066FF">Logic<tspan fill="#0066FF">Guild</tspan></text>
+    <text x="1" y="39" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="600" letter-spacing="0.22em" fill="#64748B">SYSTEMS &bull; SOLUTIONS</text>
+  </g>
+</svg>

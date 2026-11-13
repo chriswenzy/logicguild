@@ -3,102 +3,95 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Code, Database, Globe, Smartphone } from "lucide-react";
+import {
+  ArrowRight,
+  Globe,
+  ShoppingBag,
+  Sliders,
+  ShieldCheck,
+} from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-grid-pattern">
-      {/* Background Glows with parallax effect */}
-      <motion.div 
-        animate={{ 
-          x: [0, 20, 0],
-          y: [0, -20, 0],
-        }}
-        transition={{ 
-          duration: 10, 
-          repeat: Infinity, 
-          ease: "linear" 
-        }}
-        className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none" 
-      />
-      <motion.div 
-        animate={{ 
-          x: [0, -30, 0],
-          y: [0, 30, 0],
-        }}
-        transition={{ 
-          duration: 12, 
-          repeat: Infinity, 
-          ease: "linear" 
-        }}
-        className="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] pointer-events-none" 
-      />
-
+    <section className="relative min-h-[82vh] flex items-center pt-32 pb-20 overflow-hidden bg-background">
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl">
+        <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-surface border border-border text-primary text-xs font-bold tracking-widest uppercase mb-6">
-              Engineering Excellence
-            </span>
-            <h1 className="text-5xl md:text-8xl font-heading font-bold text-text-primary leading-[1.1] tracking-tighter mb-8">
-              We build scalable <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                digital products
+            {/* Entity Badge */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-50 border border-border text-xs font-semibold text-text-secondary mb-8 shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-primary" />
+              <span className="uppercase tracking-widest text-[11px] font-bold">
+                LOGIC GUILD LIMITED · RC 8969485
               </span>
+            </div>
+
+            {/* Authoritative High-Contrast Headline */}
+            <h1 className="text-4xl sm:text-6xl xl:text-7xl font-heading font-extrabold text-primary leading-[1.12] tracking-tight mb-8">
+              Engineering Better{" "}
+              <span className="text-primary-light">Digital Platforms.</span>{" "}
+              Delivering Technology That Moves Businesses Forward.
             </h1>
-            <p className="text-lg md:text-xl text-text-secondary max-w-2xl mb-12 leading-relaxed font-medium">
-              LogicGuild is a elite team of developers and designers committed to building 
-              high-performance software that drives growth and defines industries.
+
+            {/* Direct, Grounded Value Proposition */}
+            <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+              We design, build, and support modern web platforms, e-commerce
+              systems, and custom administrative portals. Partner with an
+              experienced engineering team committed to clean execution,
+              transparent communication, and dedicated post-launch support.
             </p>
           </motion.div>
 
+          {/* Action CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-wrap gap-6"
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="flex flex-wrap justify-center gap-4 items-center"
           >
             <Link
-              href="/projects"
-              className="group bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold transition-all flex items-center gap-2 shadow-2xl shadow-primary/20"
-            >
-              View Our Work
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link
               href="/contact"
-              className="px-8 py-4 rounded-full border border-border bg-surface hover:bg-card text-text-primary font-bold transition-all"
+              className="group bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-xl font-bold transition-all duration-200 flex items-center gap-3 shadow-md hover:shadow-lg hover:-translate-y-0.5 text-sm"
             >
               Start a Project
+              <ArrowRight
+                size={18}
+                className="group-hover:translate-x-1 transition-transform"
+              />
+            </Link>
+            <Link
+              href="/projects"
+              className="px-8 py-4 rounded-xl border border-border bg-white hover:bg-slate-50 text-text-primary font-semibold transition-all duration-200 hover:-translate-y-0.5 shadow-xs text-sm"
+            >
+              Explore Our Work
             </Link>
           </motion.div>
 
-          {/* Tech Stack Preview */}
+          {/* Clean Capability Highlights */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="mt-24 pt-12 border-t border-border/50 flex flex-wrap gap-12"
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mt-14 pt-8 border-t border-border flex flex-wrap justify-center items-center gap-x-8 gap-y-4"
           >
-            <div className="flex items-center gap-3 text-text-secondary grayscale hover:grayscale-0 transition-all cursor-default">
-              <Globe size={24} />
-              <span className="text-xs font-bold tracking-widest uppercase">Web Systems</span>
+            <div className="flex items-center gap-2 text-text-secondary text-xs font-semibold">
+              <Globe size={16} className="text-primary" />
+              <span>Web Platforms</span>
             </div>
-            <div className="flex items-center gap-3 text-text-secondary grayscale hover:grayscale-0 transition-all cursor-default">
-              <Smartphone size={24} />
-              <span className="text-xs font-bold tracking-widest uppercase">Mobile Apps</span>
+            <div className="flex items-center gap-2 text-text-secondary text-xs font-semibold">
+              <ShoppingBag size={16} className="text-primary" />
+              <span>Digital Commerce &amp; Paystack</span>
             </div>
-            <div className="flex items-center gap-3 text-text-secondary grayscale hover:grayscale-0 transition-all cursor-default">
-              <Code size={24} />
-              <span className="text-xs font-bold tracking-widest uppercase">Custom Dev</span>
+            <div className="flex items-center gap-2 text-text-secondary text-xs font-semibold">
+              <Sliders size={16} className="text-primary" />
+              <span>Admin Back-Offices</span>
             </div>
-            <div className="flex items-center gap-3 text-text-secondary grayscale hover:grayscale-0 transition-all cursor-default">
-              <Database size={24} />
-              <span className="text-xs font-bold tracking-widest uppercase">Cloud Architecture</span>
+            <div className="flex items-center gap-2 text-text-secondary text-xs font-semibold">
+              <ShieldCheck size={16} className="text-primary-light" />
+              <span>6 Months Complimentary Support</span>
             </div>
           </motion.div>
         </div>

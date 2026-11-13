@@ -1,90 +1,119 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { ArrowRight, Code, Database, Layout, Smartphone } from "lucide-react";
+import { ArrowRight, Layout, ShoppingBag, Sliders, Palette, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Services | LogicGuild",
-  description: "Explore our range of professional software development and design services.",
+  title: "Services & Capabilities | LOGIC GUILD LIMITED",
+  description:
+    "Explore our core engineering services: web systems, e-commerce & Paystack integrations, administrative back-offices, and brand design.",
 };
 
 const serviceDetails = [
   {
-    id: "web",
-    title: "Web Development",
-    description: "We build scalable, high-performance web applications using industry-leading frameworks and cloud-native architectures.",
-    features: ["Advanced Frontend Development", "Headless CMS Integration", "E-commerce Solutions", "API Design & Development"],
-    icon: <Layout className="w-12 h-12" />,
-    color: "from-blue-500/20 to-cyan-500/20",
+    id: "web-ecommerce",
+    title: "Web Platforms & E-Commerce Systems",
+    description:
+      "We design and develop fast, fully responsive web applications and e-commerce platforms tailored to your business needs, featuring seamless Paystack payments and smooth customer checkout journeys.",
+    features: [
+      "Custom Next.js & React Frontend",
+      "Seamless Paystack Payment Gateway",
+      "Timeframe Bidding & Outright Purchases",
+      "Mobile-First Responsive Layouts",
+    ],
+    icon: <ShoppingBag className="w-8 h-8 text-primary" />,
   },
   {
-    id: "mobile",
-    title: "Mobile Applications",
-    description: "Custom iOS and Android apps that deliver native performance and seamless user experiences across all devices.",
-    features: ["Cross-platform Development", "Native iOS Solutions", "Native Android Solutions", "App Store Optimization"],
-    icon: <Smartphone className="w-12 h-12" />,
-    color: "from-purple-500/20 to-pink-500/20",
+    id: "admin-portals",
+    title: "Custom Administrative Back-Offices",
+    description:
+      "Every platform we build comes equipped with a clean, intuitive management back-office giving your administrators full control over products, orders, inventory, content, and user accounts.",
+    features: [
+      "Product, Pricing & Inventory Control",
+      "Real-Time Order & Transaction Status",
+      "Role-Based Administrator Accounts",
+      "Sales Reports & Customer Activity",
+    ],
+    icon: <Sliders className="w-8 h-8 text-primary" />,
   },
   {
-    id: "design",
-    title: "UI/UX Design",
-    description: "Product design that focuses on usability, accessibility, and visual excellence to drive user engagement.",
-    features: ["User Research & Testing", "Interactive Prototyping", "Design Systems", "Brand Identity"],
-    icon: <Code className="w-12 h-12" />,
-    color: "from-orange-500/20 to-yellow-500/20",
+    id: "brand-design",
+    title: "Brand Identity & UI/UX Product Design",
+    description:
+      "We build clean, executive brand systems that elevate your company's digital presence—including professional logo redesign, executive color palettes, and intuitive user experiences.",
+    features: [
+      "Corporate Logo Redesign & Assets",
+      "Executive Color Palettes & Fonts",
+      "User Journey & Checkout Wireframing",
+      "Marketing Collateral & Proposals",
+    ],
+    icon: <Palette className="w-8 h-8 text-primary" />,
   },
   {
-    id: "custom",
-    title: "Custom Software",
-    description: "Bespoke software solutions tailored to your unique business needs, from ERPs to complex data platforms.",
-    features: ["Enterprise Systems (ERP/CRM)", "Database Architecture", "Cloud Infrastructure", "Legacy System Migration"],
-    icon: <Database className="w-12 h-12" />,
-    color: "from-emerald-500/20 to-teal-500/20",
+    id: "support-cloud",
+    title: "Hosting, SEO & 6 Months Technical Support",
+    description:
+      "We provide comprehensive complimentary launch services, including high-speed cloud hosting, custom domain configuration, Google SEO setup, and six full months of post-launch technical assistance.",
+    features: [
+      "1 Year Complimentary Domain & Hosting",
+      "Google Search Console & SEO Setup",
+      "SSL Security Certificate Setup",
+      "6 Months Free Technical Support",
+    ],
+    icon: <Layout className="w-8 h-8 text-primary" />,
   },
 ];
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen pt-32 bg-background">
+    <main className="min-h-screen pt-32 bg-background text-text-primary">
       <Navbar />
-      
+
       <section className="pb-24">
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mb-20">
+          <div className="max-w-3xl mb-16">
             <span className="text-primary text-xs font-bold tracking-widest uppercase mb-4 block">
-              Capabilities
+              Core Capabilities
             </span>
-            <h1 className="text-5xl md:text-7xl font-heading font-bold text-text-primary tracking-tighter mb-8">
-              Expertise that <br />
-              <span className="text-primary">drives innovation</span>
+            <h1 className="text-4xl md:text-6xl font-heading font-extrabold text-primary tracking-tight mb-6">
+              Engineering solutions designed for{" "}
+              <span className="text-primary-light">measurable business growth</span>
             </h1>
-            <p className="text-text-secondary text-lg leading-relaxed">
-              We combine deep technical knowledge with product strategy to deliver 
-              solutions that don't just work—they excel.
+            <p className="text-text-secondary text-base md:text-lg leading-relaxed">
+              We provide turnkey software engineering, digital commerce, and
+              administrative platforms that simplify operations and deliver
+              reliable results.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-12">
-            {serviceDetails.map((service, index) => (
-              <div 
-                key={service.id} 
-                className={`group p-12 rounded-[2.5rem] bg-card border border-border overflow-hidden relative flex flex-col md:flex-row gap-12 items-center transition-all duration-500 hover:border-primary/50`}
+          <div className="grid grid-cols-1 gap-8">
+            {serviceDetails.map((service) => (
+              <div
+                key={service.id}
+                className="p-8 md:p-12 rounded-3xl bg-white border border-border shadow-xs hover:border-primary/40 transition-all duration-200 flex flex-col md:flex-row gap-8 md:gap-12 items-start md:items-center"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                
-                <div className="md:w-1/3 relative z-10">
-                  <div className="w-20 h-20 bg-background rounded-2xl flex items-center justify-center text-primary mb-8 shadow-xl">
+                <div className="md:w-5/12">
+                  <div className="w-16 h-16 bg-slate-50 border border-border rounded-2xl flex items-center justify-center mb-6 shadow-xs">
                     {service.icon}
                   </div>
-                  <h2 className="text-3xl font-heading font-bold text-text-primary mb-4">{service.title}</h2>
-                  <p className="text-text-secondary leading-relaxed">{service.description}</p>
+                  <h2 className="text-2xl font-heading font-bold text-primary mb-3">
+                    {service.title}
+                  </h2>
+                  <p className="text-text-secondary text-sm leading-relaxed">
+                    {service.description}
+                  </p>
                 </div>
-                
-                <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10">
+
+                <div className="md:w-7/12 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
                   {service.features.map((feature) => (
-                    <div key={feature} className="flex items-center gap-4 p-6 bg-background/50 rounded-2xl border border-border group-hover:bg-background transition-colors">
-                      <div className="w-2 h-2 rounded-full bg-primary" />
-                      <span className="font-bold text-text-primary text-sm uppercase tracking-wider">{feature}</span>
+                    <div
+                      key={feature}
+                      className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl border border-border"
+                    >
+                      <CheckCircle2 size={16} className="text-primary-light shrink-0" />
+                      <span className="font-semibold text-text-primary text-xs">
+                        {feature}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -94,25 +123,58 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-24 bg-surface border-y border-border">
+      {/* Methodology Section */}
+      <section className="py-20 bg-surface border-y border-border">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-heading font-bold text-text-primary mb-4">Our Methodology</h2>
-            <p className="text-text-secondary">A battle-tested approach to product delivery.</p>
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-border text-xs font-bold tracking-widest text-primary uppercase mb-3 shadow-xs">
+              Our Process
+            </div>
+            <h2 className="text-3xl font-heading font-extrabold text-primary mb-3">
+              Clear, Predictable Delivery
+            </h2>
+            <p className="text-text-secondary text-sm leading-relaxed">
+              Every project follows a disciplined schedule with verified staging
+              reviews before live deployment.
+            </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
-              { step: "01", title: "Discovery", desc: "Understanding your vision, market, and technical constraints." },
-              { step: "02", title: "Architecture", desc: "Designing robust systems that scale and perform under load." },
-              { step: "03", title: "Engineering", desc: "Agile development with continuous integration and testing." },
-              { step: "04", title: "Deployment", desc: "Launching with confidence and providing ongoing support." },
+              {
+                step: "01",
+                title: "Discovery & Planning",
+                desc: "We align on scope, deliverables, payment gateway requirements, and timeline.",
+              },
+              {
+                step: "02",
+                title: "Design & Architecture",
+                desc: "We design responsive wireframes and establish secure database and API structures.",
+              },
+              {
+                step: "03",
+                title: "Development & Testing",
+                desc: "We engineer client-facing pages, back-office admin portals, and test payments.",
+              },
+              {
+                step: "04",
+                title: "Launch & 6 Months Care",
+                desc: "We deploy to live cloud servers, hand over full ownership, and provide ongoing support.",
+              },
             ].map((item) => (
-              <div key={item.step} className="relative p-8">
-                <div className="text-6xl font-heading font-black text-white/5 absolute top-0 left-0 -translate-y-4">{item.step}</div>
-                <h3 className="text-xl font-heading font-bold text-text-primary mb-4 relative z-10">{item.title}</h3>
-                <p className="text-text-secondary text-sm leading-relaxed relative z-10">{item.desc}</p>
+              <div
+                key={item.step}
+                className="p-6 rounded-2xl bg-white border border-border shadow-xs"
+              >
+                <div className="text-xl font-heading font-extrabold text-primary mb-2">
+                  {item.step}
+                </div>
+                <h3 className="text-base font-heading font-bold text-primary mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-text-secondary text-xs leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -120,13 +182,21 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6 text-center">
+      <section className="py-20 bg-background text-center">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-heading font-extrabold text-primary mb-4">
+            Ready to discuss your project?
+          </h2>
+          <p className="text-text-secondary text-sm max-w-xl mx-auto mb-8">
+            Tell us about your requirements and we will prepare a clear,
+            transparent proposal with fixed milestones.
+          </p>
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-4 bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded-full font-black transition-all shadow-2xl shadow-primary/20"
+            className="group inline-flex items-center gap-3 bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-xl font-bold transition-all shadow-md text-sm"
           >
-            Ready to start? Let's talk <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
+            Start a Conversation
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </section>

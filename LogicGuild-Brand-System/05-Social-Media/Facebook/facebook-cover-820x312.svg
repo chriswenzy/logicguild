@@ -1,0 +1,20 @@
+<svg width="820" height="312" viewBox="0 0 820 312" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="820" height="312" fill="#0A1020"/>
+  <rect x="0" y="0" width="820" height="312" fill="url(#fbGlow)"/>
+  <defs>
+    <radialGradient id="fbGlow" cx="80%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#2864E8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0A1020" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g transform="translate(60, 90)">
+    <svg width="60" height="60" viewBox="0 0 48 48" fill="none">
+      <path d="M6 10L17 4.5V13.5L6 19V10Z" fill="#38BDF8"/>
+      <path d="M6 22L17 16.5V25.5L6 31V22Z" fill="#2864E8"/>
+      <path d="M6 34L17 28.5V34H33V43H6V34Z" fill="#1D4ED8"/>
+      <path d="M33 34H42V43H33V34Z" fill="#35C6B0"/>
+    </svg>
+    <text x="80" y="42" font-family="'Sora', sans-serif" font-size="36" font-weight="700" fill="#F4F6FA">Logic<tspan fill="#2864E8">Guild</tspan></text>
+    <text x="80" y="74" font-family="'Inter', sans-serif" font-size="14" font-weight="500" fill="#94A3B8">Engineering Better Digital Experiences &bull; logicguild.vercel.app</text>
+  </g>
+</svg>

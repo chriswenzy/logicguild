@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Proposal &amp; Quotation &bull; Demure Initiative &amp; Demure Living &bull; Logic Guild Limited</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap');
+
+  :root {
+    --text-primary: #111827;
+    --text-secondary: #374151;
+    --text-muted: #6B7280;
+    --accent: #0F2744;
+    --accent-blue: #1E3A8A;
+    --border: #E5E7EB;
+    --border-light: #F3F4F6;
+    --bg-light: #F9FAFB;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #F3F4F6;
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding: 40px 20px;
+  }
+
+  .document-container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #E5E7EB;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .watermark-layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 520px;
+    height: 520px;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page-content {
+    padding: 56px 64px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Header */
+  .doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 30px;
+  }
+
+  .brand-lockup {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .brand-name {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: var(--accent);
+  }
+
+  .brand-name span {
+    color: var(--accent-blue);
+  }
+
+  .brand-descriptor {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .doc-meta {
+    text-align: right;
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .doc-meta strong {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 11.5px;
+  }
+
+  /* Title */
+  .title-section {
+    margin-bottom: 26px;
+  }
+
+  .doc-type-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+    margin-bottom: 6px;
+  }
+
+  .main-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: -0.3px;
+    line-height: 1.25;
+    margin-bottom: 6px;
+  }
+
+  .subtitle {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+
+  /* Metadata Strip (3 Columns) */
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    padding: 14px 20px;
+    border-radius: 4px;
+    margin-bottom: 32px;
+  }
+
+  .meta-cell-label {
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 3px;
+  }
+
+  .meta-cell-val {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  /* Sections */
+  .section {
+    margin-bottom: 32px;
+  }
+
+  .section-heading {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 14px;
+  }
+
+  p.prose {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+  /* Scope Blocks */
+  .scope-block {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    background: #FFFFFF;
+  }
+
+  .scope-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .scope-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .scope-subtitle {
+    font-size: 11.5px;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  .scope-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .scope-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+
+  .scope-list li {
+    font-size: 12px;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 14px;
+  }
+
+  .scope-list li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
+  }
+
+  /* Admin Grid */
+  .admin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .admin-card {
+    border: 1px solid var(--border);
+    background: var(--bg-light);
+    border-radius: 4px;
+    padding: 14px 16px;
+  }
+
+  .admin-card-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .admin-card-desc {
+    font-size: 11.5px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* Tables */
+  table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 12px;
+  }
+
+  table.data-table th {
+    background: var(--bg-light);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 9px 14px;
+    font-weight: 600;
+    font-size: 10.5px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-align: left;
+  }
+
+  table.data-table th.align-right,
+  table.data-table td.align-right {
+    text-align: right;
+  }
+
+  table.data-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-secondary);
+  }
+
+  table.data-table tr:hover td {
+    background-color: #FAFAFA;
+  }
+
+  table.data-table tr.subtotal-row td {
+    font-weight: 700;
+    color: var(--accent-blue);
+    border-top: 1px solid var(--border);
+    background: var(--bg-light);
+    font-size: 12px;
+  }
+
+  table.data-table tr.total-row td {
+    font-weight: 700;
+    color: var(--accent);
+    border-top: 1px solid var(--border);
+    border-bottom: 2px solid var(--accent);
+    background: var(--bg-light);
+    font-size: 12.5px;
+  }
+
+  .complimentary-tag {
+    font-weight: 600;
+    color: #0369A1;
+    font-size: 11px;
+  }
+
+  /* Note Box */
+  .note-box {
+    border-left: 3px solid var(--accent-blue);
+    background: var(--bg-light);
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .note-box strong {
+    color: var(--accent);
+  }
+
+  /* Sign-off */
+  .signature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .signature-box {
+    font-size: 11.5px;
+  }
+
+  .signature-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+  }
+
+  .signature-line {
+    border-bottom: 1px solid var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .signature-name {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .signature-title {
+    color: var(--text-muted);
+  }
+
+  /* Footer */
+  .doc-footer {
+    border-top: 1px solid var(--border);
+    margin-top: 44px;
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--text-muted);
+  }
+
+  @media print {
+    body { background: none; padding: 0; }
+    .document-container { box-shadow: none; border: none; max-width: 100%; }
+    .page-content { padding: 40px 48px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="document-container">
+  <img class="watermark-layer" src="watermark.png" alt="Watermark">
+
+  <div class="page-content">
+
+    <!-- Header -->
+    <header class="doc-header">
+      <div class="brand-lockup">
+        <div class="brand-name">LOGIC<span>GUILD</span></div>
+        <div class="brand-descriptor">LIMITED</div>
+      </div>
+      <div class="doc-meta">
+        <strong>LOGIC GUILD LIMITED</strong><br>
+        COMPANY REGISTRATION NO. 8969485
+      </div>
+    </header>
+
+    <!-- Title -->
+    <section class="title-section">
+      <div class="doc-type-label">Project Proposal &amp; Quotation</div>
+      <h1 class="main-title">Website Design, Development &amp; Brand Enhancement</h1>
+      <div class="subtitle">Prepared exclusively for Demure Initiative &amp; Demure Living</div>
+    </section>
+
+    <!-- Metadata Grid -->
+    <div class="meta-grid">
+      <div>
+        <div class="meta-cell-label">Date</div>
+        <div class="meta-cell-val">13 November 2026</div>
+      </div>
+      <div>
+        <div class="meta-cell-label">Proposal Ref</div>
+        <div class="meta-cell-val">LG-QUO-2026-088</div>
+      </div>
+      <div>
+        <div class="meta-cell-label">Client</div>
+        <div class="meta-cell-val">Demure Initiative &amp; Demure Living</div>
+      </div>
+    </div>
+
+    <!-- Section 1: Overview -->
+    <section class="section">
+      <div class="section-heading">1. Project Overview</div>
+      <p class="prose">
+        We propose designing and developing two modern, professional, and fully responsive websites tailored specifically to <strong>Demure Initiative</strong> and <strong>Demure Living</strong>.
+      </p>
+      <p class="prose">
+        Our goal is to strengthen both brands' digital presence, improve customer experience, simplify online payments with Paystack, and create easy-to-manage platforms that support your long-term business growth.
+      </p>
+    </section>
+
+    <!-- Section 2: Scope & Investment -->
+    <section class="section">
+      <div class="section-heading">2. Project Scope &amp; Investment</div>
+
+      <!-- Scope A -->
+      <div class="scope-block">
+        <div class="scope-header">
+          <div>
+            <div class="scope-title">A. Demure Initiative</div>
+            <div class="scope-subtitle">Charity &amp; E-Commerce Website</div>
+          </div>
+          <div class="scope-price">&#8358;2,000,000</div>
+        </div>
+        <ul class="scope-list">
+          <li>Professional charity website showcasing your mission and activities</li>
+          <li>Timed product bidding feature (users bid within a set timeframe)</li>
+          <li>Outright product purchase and checkout with Paystack</li>
+          <li>Product customization options for buyers</li>
+          <li>Individual and bundle pricing options</li>
+          <li>Social media integration</li>
+          <li>Search engine optimization (SEO) setup</li>
+          <li>Fully responsive on all mobile phones and computers</li>
+        </ul>
+      </div>
+
+      <!-- Scope B -->
+      <div class="scope-block">
+        <div class="scope-header">
+          <div>
+            <div class="scope-title">B. Demure Living</div>
+            <div class="scope-subtitle">E-Commerce Buy &amp; Sell Platform</div>
+          </div>
+          <div class="scope-price">&#8358;1,600,000</div>
+        </div>
+        <ul class="scope-list">
+          <li>Online buying and selling functionality</li>
+          <li>Product listing and inventory management</li>
+          <li>Product customization options for buyers</li>
+          <li>Individual and bundle pricing options</li>
+          <li>Automated cart and Paystack checkout</li>
+          <li>Social media integration</li>
+          <li>Search engine optimization (SEO) setup</li>
+          <li>Fast, secure, and mobile-friendly design</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 3: Admin Features -->
+    <section class="section">
+      <div class="section-heading">3. Easy-to-Use Admin Panel (Included for Both Websites)</div>
+      <p class="prose">
+        To make managing your websites simple and straightforward, both Demure Initiative and Demure Living will include a secure, user-friendly admin control panel so your team can easily handle day-to-day operations:
+      </p>
+
+      <div class="admin-grid">
+        <div class="admin-card">
+          <div class="admin-card-title">Manage Products &amp; Prices</div>
+          <div class="admin-card-desc">Easily add new products, update pictures and descriptions, adjust prices, set bundle deals, and track available stock levels.</div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title">Product Bidding Management (Demure Initiative)</div>
+          <div class="admin-card-desc">Set starting prices and time limits for bidding items, see bids as they come in live, see the winning bidder when time ends, and let them pay via Paystack.</div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title">Orders &amp; Payment Tracking</div>
+          <div class="admin-card-desc">View customer orders instantly, verify payments through Paystack, and update order statuses (Processing, Shipped, Delivered).</div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title">Update Website Content Anytime</div>
+          <div class="admin-card-desc">Easily update your text, banners, charity project stories, and contact info whenever you like, without needing to hire a programmer.</div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title">Customer Details &amp; Records</div>
+          <div class="admin-card-desc">Keep an organized record of your customers, their contact details, past purchases, and bidding participation in one tidy list.</div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title">Secure Staff Login</div>
+          <div class="admin-card-desc">Password-protected admin accounts so only authorized team members can access your website dashboard.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Complimentary Benefits -->
+    <section class="section">
+      <div class="section-heading">4. Exclusive Complimentary Benefits</div>
+      <p class="prose">
+        As part of this partnership, the following services will be provided completely <strong>FREE</strong>:
+      </p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th style="width: 55%;">Complimentary Service</th>
+            <th class="align-right">Benefit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Domain Name Registration</td>
+            <td class="align-right complimentary-tag">1 Year FREE</td>
+          </tr>
+          <tr>
+            <td>Website Hosting Infrastructure</td>
+            <td class="align-right complimentary-tag">1 Year FREE</td>
+          </tr>
+          <tr>
+            <td>Demure Living Logo Redesign</td>
+            <td class="align-right complimentary-tag">FREE</td>
+          </tr>
+          <tr>
+            <td>Professional Brand Colour Palette</td>
+            <td class="align-right complimentary-tag">FREE</td>
+          </tr>
+          <tr>
+            <td>SEO Optimization &amp; Setup</td>
+            <td class="align-right complimentary-tag">FREE</td>
+          </tr>
+          <tr>
+            <td>Google Analytics Integration</td>
+            <td class="align-right complimentary-tag">FREE</td>
+          </tr>
+          <tr>
+            <td>Google Search Console Setup</td>
+            <td class="align-right complimentary-tag">FREE</td>
+          </tr>
+          <tr>
+            <td>WhatsApp Integration</td>
+            <td class="align-right complimentary-tag">FREE</td>
+          </tr>
+          <tr>
+            <td>Social Media Integration</td>
+            <td class="align-right complimentary-tag">FREE</td>
+          </tr>
+          <tr>
+            <td>SSL Certificate &amp; Security Configuration</td>
+            <td class="align-right complimentary-tag">FREE</td>
+          </tr>
+          <tr>
+            <td>Website Speed Optimization</td>
+            <td class="align-right complimentary-tag">FREE</td>
+          </tr>
+          <tr>
+            <td>Basic Administrative Training</td>
+            <td class="align-right complimentary-tag">FREE</td>
+          </tr>
+          <tr>
+            <td><strong>Post-Launch Technical Support</strong></td>
+            <td class="align-right complimentary-tag"><strong>6 Months FREE</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note-box">
+        <strong>6 Months of Free Post-Launch Support:</strong> After both websites go live, we will provide six months of complimentary technical support covering bug fixes, error resolution, minor website adjustments, and general troubleshooting. Major new features or brand-new modules are quoted separately.
+      </div>
+    </section>
+
+    <!-- Section 5: Timeline -->
+    <section class="section">
+      <div class="section-heading">5. Project Timeline</div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th class="align-right">Delivery</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Demure Initiative Website</td>
+            <td class="align-right">2 Weeks</td>
+          </tr>
+          <tr>
+            <td>Demure Living E-Commerce Website</td>
+            <td class="align-right">2 Weeks</td>
+          </tr>
+          <tr class="total-row">
+            <td>Total Estimated Delivery</td>
+            <td class="align-right">4 Weeks</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size: 11.5px; color: var(--text-muted); margin-top: 6px;">
+        Each website will have its own dedicated two-week development timeline, subject to timely content submission and feedback.
+      </p>
+    </section>
+
+    <!-- Section 6: Project Cost Summary -->
+    <section class="section">
+      <div class="section-heading">6. Project Cost Summary</div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th class="align-right">Amount (NGN)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Demure Initiative Website (Storefront, Admin Panel &amp; Timed Bidding)</td>
+            <td class="align-right">&#8358;2,000,000</td>
+          </tr>
+          <tr>
+            <td>Demure Living E-Commerce Website (Storefront, Admin Panel &amp; Store)</td>
+            <td class="align-right">&#8358;1,600,000</td>
+          </tr>
+          <tr>
+            <td>Demure Living Logo Redesign</td>
+            <td class="align-right">&#8358;0 (FREE)</td>
+          </tr>
+          <tr>
+            <td>Domain &amp; Hosting (1 Year)</td>
+            <td class="align-right">&#8358;0 (FREE)</td>
+          </tr>
+          <tr>
+            <td>SEO &amp; Additional Services</td>
+            <td class="align-right">&#8358;0 (FREE)</td>
+          </tr>
+          <tr>
+            <td>Six Months Technical Support</td>
+            <td class="align-right">&#8358;0 (FREE)</td>
+          </tr>
+          <tr class="subtotal-row">
+            <td><strong>Subtotal</strong></td>
+            <td class="align-right"><strong>&#8358;3,600,000</strong></td>
+          </tr>
+          <tr>
+            <td>Value Added Tax (VAT 7.5%)</td>
+            <td class="align-right">&#8358;270,000</td>
+          </tr>
+          <tr class="total-row">
+            <td><strong>TOTAL INVESTMENT (INC. VAT)</strong></td>
+            <td class="align-right"><strong>&#8358;3,870,000</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size: 11.5px; color: var(--text-muted); margin-top: 6px;">
+        * Total Investment: <strong>Three Million, Eight Hundred and Seventy Thousand Naira Only (&#8358;3,870,000)</strong>.
+      </p>
+    </section>
+
+    <!-- Section 7: Payment Terms -->
+    <section class="section">
+      <div class="section-heading">7. Payment Terms</div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Milestone</th>
+            <th class="align-right">Percentage</th>
+            <th class="align-right">Amount (NGN)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>50% Initial Deposit</td>
+            <td class="align-right">50%</td>
+            <td class="align-right">&#8358;1,935,000</td>
+          </tr>
+          <tr>
+            <td>30% Development Milestone</td>
+            <td class="align-right">30%</td>
+            <td class="align-right">&#8358;1,161,000</td>
+          </tr>
+          <tr>
+            <td>20% Final Payment</td>
+            <td class="align-right">20%</td>
+            <td class="align-right">&#8358;774,000</td>
+          </tr>
+          <tr class="total-row">
+            <td><strong>TOTAL (INC. VAT)</strong></td>
+            <td class="align-right"><strong>100%</strong></td>
+            <td class="align-right"><strong>&#8358;3,870,000</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section 8: Terms & Conditions -->
+    <section class="section">
+      <div class="section-heading">8. Terms &amp; Conditions</div>
+      <ul style="list-style: none; font-size: 11.5px; color: var(--text-secondary); line-height: 1.7;">
+        <li style="margin-bottom: 6px;">&bull; <strong>Domain &amp; Hosting:</strong> Domain and hosting are complimentary for the first 12 months; subsequent renewals are chargeable at standard provider rates.</li>
+        <li style="margin-bottom: 6px;">&bull; <strong>Payment Gateway:</strong> Paystack is the payment gateway used for online purchases and bidding payments. Standard Paystack processing transaction fees are handled directly through your Paystack account.</li>
+        <li style="margin-bottom: 6px;">&bull; <strong>Additional Features:</strong> Extra features or additions outside the agreed scope will simply be quoted separately.</li>
+        <li style="margin-bottom: 6px;">&bull; <strong>Project Start:</strong> Timelines commence upon receipt of the initial deposit and required project materials (logos, text, photos).</li>
+        <li style="margin-bottom: 6px;">&bull; <strong>Full Ownership:</strong> Complete ownership of both websites, admin logins, and source code will be transferred to Demure Initiative &amp; Demure Living upon final payment.</li>
+      </ul>
+    </section>
+
+    <!-- Signatures -->
+    <div class="signature-grid">
+      <div class="signature-box">
+        <div class="signature-label">Prepared &amp; Submitted By:</div>
+        <div class="signature-line" style="height: 36px;"></div>
+        <div class="signature-name">Authorized Signatory</div>
+        <div class="signature-title">Logic Guild Limited</div>
+      </div>
+      <div class="signature-box">
+        <div class="signature-label">Accepted On Behalf of Demure Initiative &amp; Demure Living:</div>
+        <div class="signature-line" style="height: 36px;"></div>
+        <div class="signature-name">Authorized Client Signatory</div>
+        <div class="signature-title">Demure Initiative &amp; Demure Living</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="doc-footer">
+      <div>LOGIC GUILD LIMITED &bull; Strict Commercial In Confidence</div>
+      <div>Document Ref: LG-QUO-2026-088</div>
+    </footer>
+
+  </div>
+</div>
+
+</body>
+</html>

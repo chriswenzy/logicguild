@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LogicGuild Corporate Business Card — Direction 3</title>
+<style>
+  body { background: #070A11; display: flex; gap: 40px; justify-content: center; align-items: center; min-height: 100vh; margin: 0; font-family: 'Inter', sans-serif; }
+  .card { width: 3.5in; height: 2in; border-radius: 10px; box-shadow: 0 15px 35px rgba(0,0,0,0.5); position: relative; overflow: hidden; box-sizing: border-box; }
+  .front { background: #0E1322; color: #F8FAFC; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border: 1px solid #1A2640; }
+  .back { background: #121A2D; color: #F8FAFC; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #1A2640; }
+  .name { font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 800; color: #FFFFFF; }
+  .role { font-size: 10px; font-weight: 600; color: #00F5D4; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2px; }
+  .contact-details { font-size: 9.5px; color: #94A3B8; line-height: 1.6; }
+  .contact-details a { color: #00D2FF; text-decoration: none; }
+  .accent-corner { position: absolute; bottom: 0; right: 0; width: 0; height: 0; border-bottom: 24px solid #00F5D4; border-left: 24px solid transparent; }
+</style>
+</head>
+<body>
+  <div class="card front">
+    <svg width="44" height="44" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="am_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066FF"/>
+      <stop offset="60%" stop-color="#00D2FF"/>
+      <stop offset="100%" stop-color="#00F5D4"/>
+    </linearGradient>
+  </defs>
+  <path d="M8 6H20L17 14H8V6Z" fill="#0066FF"/>
+  <path d="M8 17H20L17 25H8V17Z" fill="#0099FF"/>
+  <path d="M8 28H38L42 34L37 39H8V28Z" fill="url(#am_grad)"/>
+  <circle cx="36" cy="10" r="3" fill="#00F5D4"/>
+</svg>
+    <div style="font-family: 'Sora', sans-serif; font-size: 18px; font-weight: 800; margin-top: 10px; letter-spacing: -0.02em;">
+      Logic<span style="color: #00D2FF;">Guild</span>
+    </div>
+    <div style="font-size: 7px; color: #94A3B8; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 4px; font-family: 'JetBrains Mono', monospace;">
+      Systems &bull; Solutions &bull; Architecture
+    </div>
+  </div>
+  <div class="card back">
+    <div>
+      <div class="name">Alexander Vance</div>
+      <div class="role">Chief Technology Officer &bull; Partner</div>
+    </div>
+    <div class="contact-details">
+      <div>hello@logicguild.com &bull; direct: +1 (800) 418-7265</div>
+      <div>https://logicguild.vercel.app</div>
+      <div>San Francisco &bull; London &bull; Lagos</div>
+    </div>
+    <div class="accent-corner"></div>
+  </div>
+</body>
+</html>

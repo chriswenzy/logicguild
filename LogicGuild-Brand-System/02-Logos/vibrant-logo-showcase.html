@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LogicGuild — Vibrant Logo Redesign System & Moodboard Explorations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #070A11;
+    --surface: #0E1322;
+    --card: #141B2D;
+    --border: #1E293B;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    padding: 40px 24px 80px 24px;
+    line-height: 1.6;
+  }
+  .container { max-width: 1240px; margin: 0 auto; }
+  
+  header {
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .pill {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    background: rgba(40, 100, 232, 0.15);
+    border: 1px solid rgba(40, 100, 232, 0.4);
+    color: #38BDF8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+  }
+  .lead {
+    font-size: 17px;
+    color: var(--text-secondary);
+    max-width: 780px;
+  }
+
+  /* Grid of Options */
+  .concepts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 36px;
+  }
+  .concept-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .concept-card:hover {
+    border-color: rgba(56, 189, 248, 0.4);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  }
+  .concept-header {
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(14, 19, 34, 0.6);
+  }
+  .concept-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .concept-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+  }
+
+  .concept-body {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+    padding: 32px;
+  }
+  @media (max-width: 900px) {
+    .concept-body { grid-template-columns: 1fr; }
+  }
+
+  .logo-preview-box {
+    background: #05070D;
+    border: 1px solid #1A2234;
+    border-radius: 16px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .logo-preview-box.light-preview {
+    background: #FFFFFF;
+    border-color: #E2E8F0;
+  }
+  .preview-ambient {
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.25;
+    pointer-events: none;
+  }
+
+  /* Sizes Strip */
+  .sizes-strip {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--card);
+    padding: 14px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-top: 16px;
+  }
+  .size-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+  }
+
+  /* Info Side */
+  .info-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .concept-desc {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .palette-strip {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .swatch-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .swatch {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .swatch-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text-secondary);
+  }
+
+  .meta-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    background: rgba(255,255,255,0.03);
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="pill">VIBRANT REDESIGN SUITE &bull; MOODBOARD SYNTHESIS</div>
+    <h1>LogicGuild Logo Redesign &amp; Vibrant Colorways</h1>
+    <p class="lead">
+      Inspired directly by modern tech benchmarks (Synk, Finseo, Nexa, Fluxar, Streams, Blink, Gotiket). 
+      These 5 directions inject high-energy neon radiance, geometric precision, and memorable silhouette authority into LogicGuild.
+    </p>
+  </header>
+
+  <div class="concepts-grid">
+
+    <!-- Concept 1: Cyber Lime & Electric Cobalt -->
+    <div class="concept-card">
+      <div class="concept-header">
+        <div class="concept-title">Direction 1: "The Cyber Prism" (Electric Cobalt &times; Acid Lime)</div>
+        <div class="concept-badge">INSPIRATION: FINSEO / SYNK / NEXA</div>
+      </div>
+      <div class="concept-body">
+        <div>
+          <div class="logo-preview-box">
+            <div class="preview-ambient" style="background: #C8FF00;"></div>
+            <!-- Render Option A SVG -->
+            <svg width="240" height="64" viewBox="0 0 240 64" fill="none">
+              <defs>
+                <linearGradient id="cyber_lime_a" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#C8FF00"/>
+                  <stop offset="100%" stop-color="#00FF87"/>
+                </linearGradient>
+                <linearGradient id="cyber_blue_a" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#38BDF8"/>
+                  <stop offset="100%" stop-color="#2563EB"/>
+                </linearGradient>
+                <linearGradient id="cyber_dark_a" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#1D4ED8"/>
+                  <stop offset="100%" stop-color="#0F172A"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(8, 8)">
+                <path d="M8 12L20 5V15L8 22V12Z" fill="url(#cyber_lime_a)"/>
+                <path d="M8 25L20 18V28L8 35V25Z" fill="url(#cyber_blue_a)"/>
+                <path d="M8 38L20 31V37H36V45H8V38Z" fill="url(#cyber_dark_a)"/>
+                <path d="M36 37H44V45H36V37Z" fill="url(#cyber_lime_a)"/>
+              </g>
+              <g transform="translate(68, 12)">
+                <text x="0" y="30" font-family="'Sora', sans-serif" font-size="28" font-weight="800" fill="#FFFFFF">Logic<tspan fill="#C8FF00">Guild</tspan></text>
+                <text x="2" y="44" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="0.22em" fill="#94A3B8">DIGITAL ENGINEERING</text>
+              </g>
+            </svg>
+          </div>
+          <div class="sizes-strip">
+            <span class="size-label">Scale Test:</span>
+            <!-- 32px -->
+            <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
+              <path d="M8 12L20 5V15L8 22V12Z" fill="#C8FF00"/>
+              <path d="M8 25L20 18V28L8 35V25Z" fill="#2563EB"/>
+              <path d="M8 38L20 31V37H44V45H8V38Z" fill="#1D4ED8"/>
+            </svg>
+            <!-- 20px -->
+            <svg width="20" height="20" viewBox="0 0 48 48" fill="none">
+              <path d="M8 12L20 5V15L8 22V12Z" fill="#C8FF00"/>
+              <path d="M8 25L20 18V28L8 35V25Z" fill="#2563EB"/>
+              <path d="M8 38L20 31V37H44V45H8V38Z" fill="#1D4ED8"/>
+            </svg>
+            <span style="font-size: 11px; color: #94A3B8; margin-left: auto;">Crisp down to 16px</span>
+          </div>
+        </div>
+        <div class="info-side">
+          <div>
+            <p class="concept-desc">
+              Hyper-modern, electric, and assertive. Combines an illuminated acid lime facet with royal cobalt on deep obsidian black. Communicates high velocity, modern cloud engineering, and breakthrough technical authority.
+            </p>
+            <div class="palette-strip">
+              <div class="swatch-item">
+                <div class="swatch" style="background: #C8FF00;"></div>
+                <div class="swatch-code">#C8FF00</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch" style="background: #00FF87;"></div>
+                <div class="swatch-code">#00FF87</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch" style="background: #2563EB;"></div>
+                <div class="swatch-code">#2563EB</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch" style="background: #070A11;"></div>
+                <div class="swatch-code">#070A11</div>
+              </div>
+            </div>
+          </div>
+          <div class="meta-tag">&check; Recommended for AI, Cloud &amp; High-Growth Startups</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 2: Hyper Neon Cyan & Violet Loop -->
+    <div class="concept-card">
+      <div class="concept-header">
+        <div class="concept-title">Direction 2: "The Hyper-Dimensional Ribbon" (Neon Cyan &times; Radiant Violet)</div>
+        <div class="concept-badge">INSPIRATION: TECHHOUSE / STREAMS / FLUXAR</div>
+      </div>
+      <div class="concept-body">
+        <div>
+          <div class="logo-preview-box">
+            <div class="preview-ambient" style="background: #00F0FF;"></div>
+            <!-- Render Option B SVG -->
+            <svg width="240" height="64" viewBox="0 0 240 64" fill="none">
+              <defs>
+                <linearGradient id="neon_cyan_b" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#00F0FF"/>
+                  <stop offset="50%" stop-color="#3B82F6"/>
+                  <stop offset="100%" stop-color="#7C3AED"/>
+                </linearGradient>
+                <linearGradient id="violet_glow_b" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#00F0FF"/>
+                  <stop offset="100%" stop-color="#8B5CF6"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(10, 10)">
+                <path d="M10 6C10 4.89543 10.8954 4 12 4H20C21.1046 4 22 4.89543 22 6V26H38C39.1046 26 40 26.8954 40 28V36C40 37.1046 39.1046 38 38 38H14C11.7909 38 10 36.2091 10 34V6Z" fill="url(#neon_cyan_b)"/>
+                <path d="M22 18L32 26H22V18Z" fill="#050814" fill-opacity="0.5"/>
+                <circle cx="36" cy="12" r="3.5" fill="#00F0FF"/>
+              </g>
+              <g transform="translate(68, 12)">
+                <text x="0" y="30" font-family="'Sora', sans-serif" font-size="28" font-weight="800" fill="#F4F6FA">Logic<tspan fill="url(#violet_glow_b)">Guild</tspan></text>
+                <text x="2" y="44" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" letter-spacing="0.2em" fill="#38BDF8">SOFTWARE &bull; ARCHITECTURE</text>
+              </g>
+            </svg>
+          </div>
+          <div class="sizes-strip">
+            <span class="size-label">Scale Test:</span>
+            <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
+              <path d="M10 6H22V26H38V38H14C11.7909 38 10 36.2091 10 34V6Z" fill="#00F0FF"/>
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 48 48" fill="none">
+              <path d="M10 6H22V26H38V38H14C11.7909 38 10 36.2091 10 34V6Z" fill="#00F0FF"/>
+            </svg>
+            <span style="font-size: 11px; color: #94A3B8; margin-left: auto;">Fluid loop iconography</span>
+          </div>
+        </div>
+        <div class="info-side">
+          <div>
+            <p class="concept-desc">
+              Futuristic, deep-tech, and dimensional. Features an interlocking continuous ribbon that forms both the letter 'L' and an infinity guild loop, infused with electric cyan and ultra violet.
+            </p>
+            <div class="palette-strip">
+              <div class="swatch-item">
+                <div class="swatch" style="background: #00F0FF;"></div>
+                <div class="swatch-code">#00F0FF</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch" style="background: #3B82F6;"></div>
+                <div class="swatch-code">#3B82F6</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch" style="background: #7C3AED;"></div>
+                <div class="swatch-code">#7C3AED</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch" style="background: #050814;"></div>
+                <div class="swatch-code">#050814</div>
+              </div>
+            </div>
+          </div>
+          <div class="meta-tag">&check; Visionary, Web3 &amp; Advanced Platforms</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 3: Electric Azure & Mint Monolith -->
+    <div class="concept-card">
+      <div class="concept-header">
+        <div class="concept-title">Direction 3: "The Chamfered Monolith" (Electric Azure &times; Mint Spark)</div>
+        <div class="concept-badge">INSPIRATION: GOTIKET / KOTACH / LIGHTHOUSE</div>
+      </div>
+      <div class="concept-body">
+        <div>
+          <div class="logo-preview-box">
+            <div class="preview-ambient" style="background: #00D2FF;"></div>
+            <svg width="240" height="64" viewBox="0 0 240 64" fill="none">
+              <defs>
+                <linearGradient id="azure_mint_c" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#0066FF"/>
+                  <stop offset="60%" stop-color="#00D2FF"/>
+                  <stop offset="100%" stop-color="#00F5D4"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(10, 10)">
+                <path d="M8 6H20L17 14H8V6Z" fill="#0066FF"/>
+                <path d="M8 17H20L17 25H8V17Z" fill="#0099FF"/>
+                <path d="M8 28H38L42 34L37 39H8V28Z" fill="url(#azure_mint_c)"/>
+                <circle cx="36" cy="10" r="3" fill="#00F5D4"/>
+              </g>
+              <g transform="translate(68, 12)">
+                <text x="0" y="30" font-family="'Sora', sans-serif" font-size="28" font-weight="800" fill="#FFFFFF">Logic<tspan fill="#00D2FF">Guild</tspan></text>
+                <text x="2" y="44" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="0.2em" fill="#64748B">SYSTEMS &bull; SOLUTIONS</text>
+              </g>
+            </svg>
+          </div>
+          <div class="sizes-strip">
+            <span class="size-label">Scale Test:</span>
+            <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
+              <path d="M8 6H20L17 14H8V6Z" fill="#0066FF"/>
+              <path d="M8 17H20L17 25H8V17Z" fill="#0099FF"/>
+              <path d="M8 28H38L42 34L37 39H8V28Z" fill="#00F5D4"/>
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 48 48" fill="none">
+              <path d="M8 6H20L17 14H8V6Z" fill="#0066FF"/>
+              <path d="M8 17H20L17 25H8V17Z" fill="#0099FF"/>
+              <path d="M8 28H38L42 34L37 39H8V28Z" fill="#00F5D4"/>
+            </svg>
+            <span style="font-size: 11px; color: #94A3B8; margin-left: auto;">Architectural chamfers</span>
+          </div>
+        </div>
+        <div class="info-side">
+          <div>
+            <p class="concept-desc">
+              Strong structural balance with precision 45-degree angle speed-cuts. Electric Azure gives institutional trust, while the glowing Mint terminal indicates active uptime and agility.
+            </p>
+            <div class="palette-strip">
+              <div class="swatch-item">
+                <div class="swatch" style="background: #0066FF;"></div>
+                <div class="swatch-code">#0066FF</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch" style="background: #00D2FF;"></div>
+                <div class="swatch-code">#00D2FF</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch" style="background: #00F5D4;"></div>
+                <div class="swatch-code">#00F5D4</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch" style="background: #0E1322;"></div>
+                <div class="swatch-code">#0E1322</div>
+              </div>
+            </div>
+          </div>
+          <div class="meta-tag">&check; Enterprise Software &amp; Cloud Infrastructure</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 4: Kinetic Solar Flame & Deep Space -->
+    <div class="concept-card">
+      <div class="concept-header">
+        <div class="concept-title">Direction 4: "The Kinetic Beacon" (Deep Cobalt &times; Solar Amber)</div>
+        <div class="concept-badge">INSPIRATION: BLINK / TARGET / MOVE</div>
+      </div>
+      <div class="concept-body">
+        <div>
+          <div class="logo-preview-box">
+            <div class="preview-ambient" style="background: #FF5722;"></div>
+            <svg width="240" height="64" viewBox="0 0 240 64" fill="none">
+              <defs>
+                <linearGradient id="solar_amber_d" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FF5722"/>
+                  <stop offset="100%" stop-color="#FF9100"/>
+                </linearGradient>
+                <linearGradient id="deep_cobalt_d" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#3B82F6"/>
+                  <stop offset="100%" stop-color="#1D4ED8"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(10, 10)">
+                <path d="M10 6C10 4.89543 10.8954 4 12 4H18C19.1046 4 20 4.89543 20 6V30C20 31.1046 19.1046 32 18 32H12C10.8954 32 10 31.1046 10 30V6Z" fill="url(#deep_cobalt_d)"/>
+                <path d="M16 28L28 40H40C41.1046 40 42 39.1046 42 38V34C42 32.8954 41.1046 32 40 32H24L16 24V28Z" fill="url(#solar_amber_d)"/>
+              </g>
+              <g transform="translate(68, 12)">
+                <text x="0" y="30" font-family="'Sora', sans-serif" font-size="28" font-weight="800" fill="#FFFFFF">Logic<tspan fill="#FF9100">Guild</tspan></text>
+                <text x="2" y="44" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" letter-spacing="0.22em" fill="#94A3B8">ENGINEERING EXCELLENCE</text>
+              </g>
+            </svg>
+          </div>
+          <div class="sizes-strip">
+            <span class="size-label">Scale Test:</span>
+            <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
+              <path d="M10 6H20V32H10V6Z" fill="#3B82F6"/>
+              <path d="M16 28L28 40H42V32H24L16 24V28Z" fill="#FF9100"/>
+            </svg>
+            <span style="font-size: 11px; color: #94A3B8; margin-left: auto;">High-contrast dual color</span>
+          </div>
+        </div>
+        <div class="info-side">
+          <div>
+            <p class="concept-desc">
+              High-impact, warm and energetic. The deep blue vertical spine represents stability and logic, while the solar amber cantilever represents acceleration, passion, and forward business momentum.
+            </p>
+            <div class="palette-strip">
+              <div class="swatch-item">
+                <div class="swatch" style="background: #3B82F6;"></div>
+                <div class="swatch-code">#3B82F6</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch" style="background: #FF5722;"></div>
+                <div class="swatch-code">#FF5722</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch" style="background: #FF9100;"></div>
+                <div class="swatch-code">#FF9100</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch" style="background: #070A11;"></div>
+                <div class="swatch-code">#070A11</div>
+              </div>
+            </div>
+          </div>
+          <div class="meta-tag">&check; High-Conversion &amp; Product Studios</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 5: Multi-Layer Optical Glass -->
+    <div class="concept-card">
+      <div class="concept-header">
+        <div class="concept-title">Direction 5: "The Translucent Glass L" (Electric Indigo &times; Neon Aqua)</div>
+        <div class="concept-badge">INSPIRATION: ATRIA / NOVEL / CODEC</div>
+      </div>
+      <div class="concept-body">
+        <div>
+          <div class="logo-preview-box">
+            <div class="preview-ambient" style="background: #00F5D4;"></div>
+            <svg width="240" height="64" viewBox="0 0 240 64" fill="none">
+              <defs>
+                <linearGradient id="glass_teal_e" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#00F5D4"/>
+                  <stop offset="100%" stop-color="#00BBF9"/>
+                </linearGradient>
+                <linearGradient id="glass_blue_e" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#4361EE"/>
+                  <stop offset="100%" stop-color="#3A0CA3"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(10, 10)">
+                <rect x="8" y="6" width="10" height="26" rx="5" fill="url(#glass_blue_e)"/>
+                <rect x="8" y="24" width="30" height="10" rx="5" fill="url(#glass_teal_e)" fill-opacity="0.9"/>
+                <rect x="8" y="24" width="10" height="8" rx="2" fill="#FFFFFF" fill-opacity="0.3"/>
+              </g>
+              <g transform="translate(68, 12)">
+                <text x="0" y="30" font-family="'Sora', sans-serif" font-size="28" font-weight="800" fill="#FFFFFF">Logic<tspan fill="#00F5D4">Guild</tspan></text>
+                <text x="2" y="44" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="0.2em" fill="#94A3B8">DIGITAL SOLUTIONS</text>
+              </g>
+            </svg>
+          </div>
+          <div class="sizes-strip">
+            <span class="size-label">Scale Test:</span>
+            <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
+              <rect x="8" y="6" width="10" height="26" rx="5" fill="#4361EE"/>
+              <rect x="8" y="24" width="30" height="10" rx="5" fill="#00F5D4"/>
+            </svg>
+            <span style="font-size: 11px; color: #94A3B8; margin-left: auto;">Pill-geometry precision</span>
+          </div>
+        </div>
+        <div class="info-side">
+          <div>
+            <p class="concept-desc">
+              Sleek rounded pill geometry with translucent optical glass overlap. Creates a luminous, friendly, and approachable tech aesthetic that softens complex engineering.
+            </p>
+            <div class="palette-strip">
+              <div class="swatch-item">
+                <div class="swatch" style="background: #00F5D4;"></div>
+                <div class="swatch-code">#00F5D4</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch" style="background: #4361EE;"></div>
+                <div class="swatch-code">#4361EE</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch" style="background: #3A0CA3;"></div>
+                <div class="swatch-code">#3A0CA3</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch" style="background: #0E1322;"></div>
+                <div class="swatch-code">#0E1322</div>
+              </div>
+            </div>
+          </div>
+          <div class="meta-tag">&check; High-Design &amp; Consumer Applications</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

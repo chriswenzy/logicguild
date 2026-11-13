@@ -1,0 +1,13 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="azure_mint_grad_lt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0052CC"/>
+      <stop offset="60%" stop-color="#0088FF"/>
+      <stop offset="100%" stop-color="#00BFA5"/>
+    </linearGradient>
+  </defs>
+  <path d="M8 6H20L17 14H8V6Z" fill="#0052CC"/>
+  <path d="M8 17H20L17 25H8V17Z" fill="#0077FF"/>
+  <path d="M8 28H38L42 34L37 39H8V28Z" fill="url(#azure_mint_grad_lt)"/>
+  <circle cx="36" cy="10" r="3" fill="#00BFA5"/>
+</svg>

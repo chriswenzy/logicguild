@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LogicGuild Corporate Invoice Template</title>
+<style>
+  body { background: #E5E7EB; margin: 0; padding: 40px; font-family: 'Inter', -apple-system, sans-serif; display: flex; justify-content: center; }
+  .sheet { width: 8.5in; min-height: 11in; background: #FFFFFF; padding: 50px 60px; box-sizing: border-box; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+  .top-rule { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #2864E8 0%, #35C6B0 100%); }
+  .header { display: flex; justify-content: space-between; border-bottom: 2px solid #F1F5F9; padding-bottom: 30px; }
+  .meta-title { font-family: 'Sora', sans-serif; font-size: 28px; font-weight: 700; color: #0A1020; margin: 0 0 8px 0; }
+  .invoice-meta { font-size: 11px; color: #64748B; line-height: 1.6; text-align: right; }
+  .bill-to { display: flex; justify-content: space-between; margin: 30px 0; font-size: 12px; }
+  .bill-to strong { color: #0A1020; font-size: 13px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 12px; }
+  th { background: #0F172A; color: #F4F6FA; padding: 12px 16px; text-align: left; font-family: 'Sora', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.05em; }
+  td { padding: 14px 16px; border-bottom: 1px solid #F1F5F9; color: #334155; }
+  .total-block { margin-top: 30px; align-self: flex-end; width: 280px; font-size: 12px; }
+  .total-row { display: flex; justify-content: space-between; padding: 8px 0; color: #64748B; }
+  .grand-total { display: flex; justify-content: space-between; padding: 12px 0; border-top: 2px solid #0A1020; color: #0A1020; font-size: 16px; font-weight: 700; font-family: 'Sora', sans-serif; }
+  .footer { border-top: 1px solid #F1F5F9; padding-top: 20px; font-size: 10px; color: #94A3B8; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="top-rule"></div>
+    <div class="header">
+      <div>
+        <svg width="180" height="42" viewBox="0 0 240 48" fill="none">
+          <g transform="translate(0, 0)">
+            <svg width="42" height="42" viewBox="0 0 48 48" fill="none">
+              <path d="M6 10L17 4.5V13.5L6 19V10Z" fill="#2864E8"/>
+              <path d="M6 22L17 16.5V25.5L6 31V22Z" fill="#1D4ED8"/>
+              <path d="M6 34L17 28.5V34H33V43H6V34Z" fill="#0A1020"/>
+              <path d="M33 34H42V43H33V34Z" fill="#35C6B0"/>
+            </svg>
+          </g>
+          <text x="56" y="30" font-family="'Sora', sans-serif" font-size="24" font-weight="700" fill="#0A1020">Logic<tspan fill="#2864E8">Guild</tspan></text>
+        </svg>
+        <div style="font-size: 10px; color: #64748B; margin-top: 8px;">
+          Engineering &amp; Digital Solutions<br>
+          hello@logicguild.com &bull; logicguild.vercel.app
+        </div>
+      </div>
+      <div class="invoice-meta">
+        <h1 class="meta-title">INVOICE</h1>
+        <div><strong>Invoice Number:</strong> LG-2026-0842</div>
+        <div><strong>Issue Date:</strong> November 12, 2026</div>
+        <div><strong>Payment Due:</strong> November 26, 2026 (Net 14)</div>
+      </div>
+    </div>
+
+    <div class="bill-to">
+      <div>
+        <span style="color: #64748B; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;">Billed To:</span><br>
+        <strong>Acme Technologies Inc.</strong><br>
+        Attn: Sarah Jenkins, VP of Engineering<br>
+        500 Howard Street, Suite 400<br>
+        San Francisco, CA 94105
+      </div>
+      <div style="text-align: right;">
+        <span style="color: #64748B; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;">Project Reference:</span><br>
+        <strong>Core Platform Modernization (Sprint 4-5)</strong><br>
+        Architecture: Next.js, Node.js, AWS Cloud
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ITEM &amp; DELIVERABLE DESCRIPTION</th>
+          <th style="width: 80px; text-align: center;">QTY / HRS</th>
+          <th style="width: 100px; text-align: right;">RATE</th>
+          <th style="width: 110px; text-align: right;">AMOUNT (USD)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <strong>Sprint 4: API Gateway &amp; Microservices Architecture</strong><br>
+            <span style="font-size: 11px; color: #64748B;">Implemented distributed caching layer, OAuth2 security protocol, and containerized deployment.</span>
+          </td>
+          <td style="text-align: center;">Milestone 1</td>
+          <td style="text-align: right;">$8,500.00</td>
+          <td style="text-align: right;"><strong>$8,500.00</strong></td>
+        </tr>
+        <tr>
+          <td>
+            <strong>Sprint 5: High-Performance Frontend &amp; Real-Time UI</strong><br>
+            <span style="font-size: 11px; color: #64748B;">Delivered responsive dashboard with WebSocket event stream and 99.8% test coverage.</span>
+          </td>
+          <td style="text-align: center;">Milestone 2</td>
+          <td style="text-align: right;">$7,500.00</td>
+          <td style="text-align: right;"><strong>$7,500.00</strong></td>
+        </tr>
+        <tr>
+          <td>
+            <strong>DevOps Infrastructure &amp; CI/CD Pipeline Automation</strong><br>
+            <span style="font-size: 11px; color: #64748B;">Configured GitHub Actions, staging preview environments, and CloudWatch alerts.</span>
+          </td>
+          <td style="text-align: center;">Fixed</td>
+          <td style="text-align: right;">$2,000.00</td>
+          <td style="text-align: right;"><strong>$2,000.00</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="total-block">
+      <div class="total-row"><span>Subtotal:</span><span>$18,000.00</span></div>
+      <div class="total-row"><span>Tax (0.0%):</span><span>$0.00</span></div>
+      <div class="grand-total"><span>Total Due:</span><span style="color: #2864E8;">$18,000.00</span></div>
+    </div>
+
+    <div style="font-size: 11px; color: #475569; background: #F8FAFC; border: 1px solid #E2E8F0; padding: 14px 18px; border-radius: 6px; margin-top: 20px;">
+      <strong>Bank Wire Transfer Instructions:</strong><br>
+      Bank: Silicon Valley Bank / First Republic &bull; Routing: 121042882 &bull; Account: 984029104<br>
+      Beneficiary: LogicGuild Technology Group &bull; Swift: SVBUS6S
+    </div>
+
+    <div class="footer">
+      <div>Thank you for partnering with LogicGuild. Exceptional Engineering. Exceptional Delivery.</div>
+      <div>Page 1 of 1</div>
+    </div>
+  </div>
+</body>
+</html>

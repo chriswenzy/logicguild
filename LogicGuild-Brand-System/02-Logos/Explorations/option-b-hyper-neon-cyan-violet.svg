@@ -1,0 +1,34 @@
+<svg width="240" height="64" viewBox="0 0 240 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="neon_cyan_b" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="violet_glow_b" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Continuous Interlocking Geometric L Ribbon -->
+  <g transform="translate(10, 10)">
+    <!-- Outer Glow -->
+    <circle cx="22" cy="22" r="20" fill="#00F0FF" fill-opacity="0.12" filter="blur(10px)"/>
+    <!-- Ribbon Path -->
+    <path d="M10 6C10 4.89543 10.8954 4 12 4H20C21.1046 4 22 4.89543 22 6V26H38C39.1046 26 40 26.8954 40 28V36C40 37.1046 39.1046 38 38 38H14C11.7909 38 10 36.2091 10 34V6Z" fill="url(#neon_cyan_b)"/>
+    <!-- Inner optical depth notch -->
+    <path d="M22 18L32 26H22V18Z" fill="#050814" fill-opacity="0.5"/>
+    <circle cx="36" cy="12" r="3.5" fill="#00F0FF"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(68, 12)">
+    <text x="0" y="30" font-family="'Sora', -apple-system, sans-serif" font-size="28" font-weight="800" letter-spacing="-0.035em" fill="#F4F6FA">
+      Logic<tspan fill="url(#violet_glow_b)">Guild</tspan>
+    </text>
+    <text x="2" y="44" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" letter-spacing="0.2em" fill="#38BDF8">
+      SOFTWARE &bull; ARCHITECTURE
+    </text>
+  </g>
+</svg>

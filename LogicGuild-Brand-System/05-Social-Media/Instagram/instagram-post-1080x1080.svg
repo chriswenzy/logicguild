@@ -1,0 +1,33 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1080" height="1080" fill="#0A1020"/>
+  <rect x="60" y="60" width="960" height="960" rx="24" fill="#0F172A" stroke="#1E293B" stroke-width="2"/>
+  <!-- Header Bar -->
+  <g transform="translate(120, 120)">
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+      <path d="M6 10L17 4.5V13.5L6 19V10Z" fill="#38BDF8"/>
+      <path d="M6 22L17 16.5V25.5L6 31V22Z" fill="#2864E8"/>
+      <path d="M6 34L17 28.5V34H33V43H6V34Z" fill="#1D4ED8"/>
+      <path d="M33 34H42V43H33V34Z" fill="#35C6B0"/>
+    </svg>
+    <text x="64" y="34" font-family="'Sora', sans-serif" font-size="28" font-weight="700" fill="#F4F6FA">Logic<tspan fill="#2864E8">Guild</tspan></text>
+  </g>
+  <!-- Category Tag -->
+  <rect x="120" y="240" width="180" height="36" rx="18" fill="#151F33" stroke="#2864E8" stroke-opacity="0.4"/>
+  <text x="210" y="263" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#35C6B0" letter-spacing="0.08em">ENGINEERING INSIGHT</text>
+  <!-- Main Post Headline -->
+  <text x="120" y="380" font-family="'Sora', sans-serif" font-size="46" font-weight="700" fill="#F4F6FA" line-height="1.2">
+    <tspan x="120" dy="0">How We Architect</tspan>
+    <tspan x="120" dy="64">High-Throughput</tspan>
+    <tspan x="120" dy="64">Web Platforms</tspan>
+    <tspan x="120" dy="64" fill="#2864E8">For Zero Downtime.</tspan>
+  </text>
+  <!-- Description -->
+  <text x="120" y="680" font-family="'Inter', sans-serif" font-size="22" font-weight="400" fill="#94A3B8">
+    <tspan x="120" dy="0">A transparent breakdown of distributed caching, edge routing,</tspan>
+    <tspan x="120" dy="36">and database sharding for mission-critical scale.</tspan>
+  </text>
+  <!-- Footer Call to Action -->
+  <g transform="translate(120, 880)">
+    <text x="0" y="20" font-family="'Inter', sans-serif" font-size="18" font-weight="600" fill="#35C6B0">logicguild.vercel.app &bull; Read Case Study &rarr;</text>
+  </g>
+</svg>

@@ -2,70 +2,62 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Terms of Service | LogicGuild",
-  description: "Terms and conditions for using LogicGuild services.",
+  title: "Terms of Service | LOGIC GUILD LIMITED",
+  description: "Terms and conditions for services provided by LOGIC GUILD LIMITED (RC 8969485).",
 };
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen pt-32 bg-background">
+    <main className="min-h-screen pt-32 bg-background text-text-primary">
       <Navbar />
-      
+
       <section className="pb-24">
         <div className="container mx-auto px-6 max-w-4xl">
           <span className="text-primary text-xs font-bold tracking-widest uppercase mb-4 block">
-            Legal
+            Legal &amp; Governance
           </span>
-          <h1 className="text-4xl md:text-6xl font-heading font-bold text-text-primary tracking-tighter mb-12">
+          <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-primary tracking-tight mb-8">
             Terms of Service
           </h1>
-          
-          <div className="space-y-12 text-text-secondary leading-relaxed">
-            <section>
-              <h2 className="text-2xl font-heading font-bold text-text-primary mb-4">1. Acceptance of Terms</h2>
+
+          <div className="space-y-10 text-text-secondary leading-relaxed text-sm md:text-base">
+            <section className="p-6 rounded-2xl bg-white border border-border shadow-xs">
+              <h2 className="text-lg font-heading font-bold text-primary mb-3">1. Acceptance of Terms</h2>
               <p>
-                By accessing and using the services provided by LogicGuild, you agree to be bound by these 
-                Terms of Service. If you do not agree to these terms, please do not use our services.
+                By accessing services or entering into an agreement with LOGIC GUILD LIMITED (Company Registration No. 8969485), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-heading font-bold text-text-primary mb-4">2. Services</h2>
+            <section className="p-6 rounded-2xl bg-white border border-border shadow-xs">
+              <h2 className="text-lg font-heading font-bold text-primary mb-3">2. Scope of Services</h2>
               <p>
-                LogicGuild provides software development, UI/UX design, and technical consulting services. 
-                Specific project terms, timelines, and deliverables will be outlined in separate 
-                service agreements or statements of work.
+                LOGIC GUILD LIMITED provides web design, software development, e-commerce systems, administrative back-offices, and post-launch technical support. Specific project deliverables, payment milestones, and delivery timelines are specified in our official proposals and service quotations.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-heading font-bold text-text-primary mb-4">3. Intellectual Property</h2>
+            <section className="p-6 rounded-2xl bg-white border border-border shadow-xs">
+              <h2 className="text-lg font-heading font-bold text-primary mb-3">3. Source Code &amp; Intellectual Property Ownership</h2>
               <p>
-                Unless otherwise agreed upon in writing, all intellectual property rights for work 
-                created during a project will be transferred to the client upon full payment. 
-                LogicGuild retains the right to showcase the work in its portfolio for promotional purposes.
+                Full source code and project intellectual property rights are transferred to the client upon full payment of the project investment. LOGIC GUILD LIMITED retains the right to display the completed work in its professional portfolio for promotional purposes unless otherwise protected under a formal non-disclosure agreement.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-heading font-bold text-text-primary mb-4">4. Limitation of Liability</h2>
+            <section className="p-6 rounded-2xl bg-white border border-border shadow-xs">
+              <h2 className="text-lg font-heading font-bold text-primary mb-3">4. Post-Launch Technical Support</h2>
               <p>
-                LogicGuild shall not be liable for any indirect, incidental, special, or consequential 
-                damages resulting from the use or inability to use our services or for the cost of 
-                procurement of substitute services.
+                Where included, complimentary technical support covers bug fixes, error resolution, minor adjustments, and technical troubleshooting for the agreed duration. Support excludes major redesigns, new feature modules, and significant functionality additions, which are quoted separately.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-heading font-bold text-text-primary mb-4">5. Governing Law</h2>
+            <section className="p-6 rounded-2xl bg-white border border-border shadow-xs">
+              <h2 className="text-lg font-heading font-bold text-primary mb-3">5. Governing Law</h2>
               <p>
-                These terms shall be governed by and construed in accordance with the laws of the 
-                jurisdiction in which LogicGuild operates, without regard to its conflict of law provisions.
+                These terms are governed by and construed in accordance with the laws of the Federal Republic of Nigeria.
               </p>
             </section>
 
-            <p className="text-sm pt-8 border-t border-border">
-              Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+            <p className="text-xs text-text-muted pt-6 border-t border-border">
+              LOGIC GUILD LIMITED · COMPANY REGISTRATION NO. 8969485 · Last Updated: November 2026
             </p>
           </div>
         </div>

@@ -1,12 +1,9 @@
-<svg
-  width="32"
-  height="32"
-  viewBox="0 0 40 40"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path d="M4 24L12 20V28L4 32V24Z" fill="#3B82F6" fill-opacity="0.7" />
-  <path d="M4 14L12 10V18L4 22V14Z" fill="#3B82F6" fill-opacity="0.85" />
-  <path d="M4 4L12 0V8L4 12V4Z" fill="#3B82F6" />
-  <path d="M12 28H32V34H12V28Z" fill="#3B82F6" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <rect width="48" height="48" rx="10" fill="#0F2744" />
+  <g transform="translate(2, 2) scale(0.92)">
+    <path d="M8 6 H20 L17 14 H8 V6 Z" fill="#FFFFFF" />
+    <path d="M8 17 H20 L17 25 H8 V17 Z" fill="#93C5FD" />
+    <path d="M8 28 H38 L42 34 L37 39 H8 V28 Z" fill="#FFFFFF" />
+    <circle cx="36" cy="10" r="3.2" fill="#60A5FA" />
+  </g>
 </svg>

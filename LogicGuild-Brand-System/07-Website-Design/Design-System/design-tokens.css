@@ -1,0 +1,30 @@
+/* LogicGuild Master Design Tokens — Direction 3: The Chamfered Monolith */
+:root {
+  /* Brand Core Colors */
+  --lg-primary-azure: #0066FF;
+  --lg-azure-hover: #0052CC;
+  --lg-luminous-cyan: #00D2FF;
+  --lg-mint-spark: #00F5D4;
+  --lg-deep-obsidian: #070A11;
+  --lg-graphite-surface: #0E1322;
+  --lg-navy-card: #121A2D;
+  --lg-slate-border: #1A2640;
+  --lg-cloud-white: #F8FAFC;
+
+  /* Semantic UI */
+  --lg-success: #00F5D4;
+  --lg-warning: #F59E0B;
+  --lg-error: #EF4444;
+  --lg-info: #0066FF;
+
+  /* Typography */
+  --font-display: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Glows & Gradients */
+  --lg-azure-glow: 0 0 32px rgba(0, 102, 255, 0.35);
+  --lg-mint-glow: 0 0 24px rgba(0, 245, 212, 0.35);
+  --lg-gradient-primary: linear-gradient(135deg, #0066FF 0%, #00D2FF 60%, #00F5D4 100%);
+  --lg-gradient-surface: linear-gradient(180deg, #121A2D 0%, #0E1322 100%);
+}

@@ -1,0 +1,42 @@
+<svg width="240" height="64" viewBox="0 0 240 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cyber_lime_a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C8FF00"/>
+      <stop offset="100%" stop-color="#00FF87"/>
+    </linearGradient>
+    <linearGradient id="cyber_blue_a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="cyber_dark_a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1D4ED8"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <filter id="glow_a" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Symbol: 48x48 inside 64h -->
+  <g transform="translate(8, 8)">
+    <!-- Top Innovation facet -->
+    <path d="M8 12L20 5V15L8 22V12Z" fill="url(#cyber_lime_a)" filter="url(#glow_a)"/>
+    <!-- Middle Architecture facet -->
+    <path d="M8 25L20 18V28L8 35V25Z" fill="url(#cyber_blue_a)"/>
+    <!-- Foundational Cantilever Foot -->
+    <path d="M8 38L20 31V37H36V45H8V38Z" fill="url(#cyber_dark_a)"/>
+    <!-- Acid Lime Power Node -->
+    <path d="M36 37H44V45H36V37Z" fill="url(#cyber_lime_a)"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(68, 12)">
+    <text x="0" y="30" font-family="'Sora', -apple-system, sans-serif" font-size="28" font-weight="800" letter-spacing="-0.035em" fill="#FFFFFF">
+      Logic<tspan fill="#C8FF00">Guild</tspan>
+    </text>
+    <text x="2" y="44" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="0.22em" fill="#94A3B8">
+      DIGITAL ENGINEERING
+    </text>
+  </g>
+</svg>

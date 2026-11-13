@@ -5,29 +5,30 @@ import { projects } from "@/constants/projects";
 import Reveal from "@/components/ui/Reveal";
 
 export const metadata = {
-  title: "Projects | LogicGuild",
-  description: "A showcase of high-end digital products built by LogicGuild.",
+  title: "Selected Work | LOGIC GUILD LIMITED",
+  description: "A showcase of high-performance digital platforms, commerce solutions, and custom software delivered by LOGIC GUILD LIMITED.",
 };
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen pt-32 bg-background">
+    <main className="min-h-screen pt-32 bg-background text-text-primary">
       <Navbar />
-      
+
       <section className="pb-24">
         <div className="container mx-auto px-6">
           <Reveal>
-            <div className="max-w-3xl mb-20">
+            <div className="max-w-3xl mb-16">
               <span className="text-primary text-xs font-bold tracking-widest uppercase mb-4 block">
-                Our Portfolio
+                Selected Work
               </span>
-              <h1 className="text-5xl md:text-7xl font-heading font-bold text-text-primary tracking-tighter mb-8">
-                Engineering impact through <br />
-                <span className="text-primary">technical precision</span>
+              <h1 className="text-4xl md:text-6xl font-heading font-extrabold text-primary tracking-tight mb-6">
+                Verified digital platforms built with{" "}
+                <span className="text-primary-light">precision and care</span>
               </h1>
-              <p className="text-text-secondary text-lg leading-relaxed">
-                From high-performance e-commerce platforms to complex enterprise ERPs, 
-                we build products that define industries. Explore our latest work.
+              <p className="text-text-secondary text-base md:text-lg leading-relaxed">
+                From high-performing e-commerce applications and bidding platforms
+                to automotive portals and corporate systems, explore digital
+                solutions we have designed, delivered, and supported.
               </p>
             </div>
           </Reveal>

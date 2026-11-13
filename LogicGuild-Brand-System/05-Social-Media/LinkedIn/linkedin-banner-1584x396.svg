@@ -1,0 +1,28 @@
+<svg width="1584" height="396" viewBox="0 0 1584 396" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1584" height="396" fill="#070A11"/>
+  <defs>
+    <radialGradient id="liGlow_d3" cx="80%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#0066FF" stop-opacity="0.38"/>
+      <stop offset="60%" stop-color="#00F5D4" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#070A11" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="azure_mint_li" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066FF"/>
+      <stop offset="60%" stop-color="#00D2FF"/>
+      <stop offset="100%" stop-color="#00F5D4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1584" height="396" fill="url(#liGlow_d3)"/>
+  <g transform="translate(120, 105)">
+    <svg width="84" height="84" viewBox="0 0 48 48" fill="none">
+      <path d="M8 6H20L17 14H8V6Z" fill="#0066FF"/>
+      <path d="M8 17H20L17 25H8V17Z" fill="#0099FF"/>
+      <path d="M8 28H38L42 34L37 39H8V28Z" fill="url(#azure_mint_li)"/>
+      <circle cx="36" cy="10" r="3.2" fill="#00F5D4"/>
+    </svg>
+    <text x="110" y="52" font-family="'Sora', sans-serif" font-size="46" font-weight="800" fill="#FFFFFF">Logic<tspan fill="#00D2FF">Guild</tspan></text>
+    <text x="110" y="92" font-family="'Inter', sans-serif" font-size="19" font-weight="500" fill="#94A3B8">Engineering Better Digital Experiences. Delivering Technology That Moves Businesses Forward.</text>
+  </g>
+  <path d="M1420 396 L1584 232 L1584 396 Z" fill="#0066FF" fill-opacity="0.18"/>
+  <path d="M1490 396 L1584 302 L1584 396 Z" fill="#00F5D4" fill-opacity="0.22"/>
+</svg>

@@ -1,0 +1,26 @@
+<svg width="1500" height="500" viewBox="0 0 1500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1500" height="500" fill="#070A11"/>
+  <defs>
+    <radialGradient id="xGlow_d3" cx="75%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#0066FF" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#00F5D4" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#070A11" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="azure_mint_x" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066FF"/>
+      <stop offset="60%" stop-color="#00D2FF"/>
+      <stop offset="100%" stop-color="#00F5D4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1500" height="500" fill="url(#xGlow_d3)"/>
+  <g transform="translate(140, 155)">
+    <svg width="90" height="90" viewBox="0 0 48 48" fill="none">
+      <path d="M8 6H20L17 14H8V6Z" fill="#0066FF"/>
+      <path d="M8 17H20L17 25H8V17Z" fill="#0099FF"/>
+      <path d="M8 28H38L42 34L37 39H8V28Z" fill="url(#azure_mint_x)"/>
+      <circle cx="36" cy="10" r="3.2" fill="#00F5D4"/>
+    </svg>
+    <text x="120" y="58" font-family="'Sora', sans-serif" font-size="52" font-weight="800" fill="#FFFFFF">Logic<tspan fill="#00D2FF">Guild</tspan></text>
+    <text x="120" y="105" font-family="'Inter', sans-serif" font-size="22" font-weight="500" fill="#94A3B8">Exceptional Engineering. Exceptional People. Exceptional Delivery.</text>
+  </g>
+</svg>
