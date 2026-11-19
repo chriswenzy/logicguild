@@ -87,10 +87,7 @@ export default function ServicesOverview() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-3xl md:text-5xl font-heading font-extrabold text-primary tracking-tight"
             >
-              Digital solutions designed for{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-accent-subtle">
-                real business growth
-              </span>
+              Digital solutions designed for real business growth
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 15 }}

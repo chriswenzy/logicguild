@@ -35,15 +35,15 @@ export default function FinalCTA() {
             className="pointer-events-none absolute -inset-px transition-opacity duration-300 z-10"
             style={{
               opacity,
-              background: `radial-gradient(500px circle at ${position.x}px ${position.y}px, rgba(59, 130, 246, 0.2), transparent 75%)`,
+              background: `radial-gradient(500px circle at ${position.x}px ${position.y}px, rgba(255, 255, 255, 0.08), transparent 75%)`,
             }}
           />
 
           {/* Top subtle highlight line */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-subtle via-accent to-accent-subtle" />
+          <div className="absolute top-0 left-0 right-0 h-1 bg-white/20" />
 
-          {/* Background Ambient Ambient Glows */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[300px] bg-accent/15 rounded-full blur-[120px] pointer-events-none" />
+          {/* Background Ambient Glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[300px] bg-white/5 rounded-full blur-[120px] pointer-events-none" />
 
           <div className="relative z-20">
             <motion.div

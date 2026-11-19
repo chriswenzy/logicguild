@@ -7,9 +7,9 @@
   --color-card-subtle: #F1F5F9;
   
   --color-primary: #0F2744;
-  --color-primary-hover: #1E3A8A;
-  --color-accent: #2563EB;
-  --color-accent-subtle: #3B82F6;
+  --color-primary-hover: #0F2744;
+  --color-accent: #0F2744;
+  --color-accent-subtle: #0F2744;
   
   --color-text-primary: #0F172A;
   --color-text-secondary: #475569;
@@ -32,7 +32,7 @@
 
 @layer base {
   ::selection {
-    background-color: #1E3A8A;
+    background-color: #0F2744;
     color: #FFFFFF;
   }
 

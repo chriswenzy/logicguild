@@ -51,7 +51,7 @@ export default function Hero() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="pointer-events-none absolute -top-24 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-accent/10 via-primary/5 to-transparent rounded-full blur-3xl -z-10"
+        className="pointer-events-none absolute -top-24 right-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -z-10"
       />
       <motion.div
         animate={{
@@ -65,7 +65,7 @@ export default function Hero() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="pointer-events-none absolute bottom-0 left-1/4 w-[450px] h-[450px] bg-gradient-to-tr from-accent-subtle/10 via-primary/5 to-transparent rounded-full blur-3xl -z-10"
+        className="pointer-events-none absolute bottom-0 left-1/4 w-[450px] h-[450px] bg-primary/5 rounded-full blur-3xl -z-10"
       />
 
       <div className="container mx-auto px-6 relative z-10">
@@ -75,33 +75,12 @@ export default function Hero() {
           animate="visible"
           className="max-w-4xl mx-auto text-center"
         >
-          {/* Entity Badge */}
-          <motion.div variants={itemVariants} className="inline-block mb-8">
-            <motion.div
-              whileHover={{ scale: 1.03, y: -1 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-50 border border-border text-xs font-semibold text-text-secondary shadow-xs hover:border-accent/40 hover:bg-slate-100 transition-all cursor-default"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
-              </span>
-              <span className="uppercase tracking-widest text-[11px] font-bold text-primary">
-                LOGIC GUILD LIMITED · RC 8969485
-              </span>
-            </motion.div>
-          </motion.div>
-
           {/* Authoritative High-Contrast Headline */}
           <motion.h1
             variants={itemVariants}
             className="text-4xl sm:text-6xl xl:text-7xl font-heading font-extrabold text-primary leading-[1.12] tracking-tight mb-8"
           >
-            Engineering Better{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary-light">
-              Digital Platforms.
-            </span>{" "}
-            Delivering Technology That Moves Businesses Forward.
+            Engineering Better Digital Platforms. Delivering Technology That Moves Businesses Forward.
           </motion.h1>
 
           {/* Direct, Grounded Value Proposition */}
@@ -129,7 +108,7 @@ export default function Hero() {
                 }}
                 whileTap={{ scale: 0.96 }}
                 transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                className="group relative overflow-hidden bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-xl font-bold transition-colors flex items-center gap-3 shadow-md text-sm cursor-pointer"
+                className="group relative overflow-hidden bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold transition-colors flex items-center gap-3 shadow-md text-sm cursor-pointer"
               >
                 {/* Shimmer sweep on hover */}
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full duration-1000 bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform ease-out" />
@@ -169,7 +148,7 @@ export default function Hero() {
               { icon: <Globe size={16} className="text-primary" />, label: "Web Platforms" },
               { icon: <ShoppingBag size={16} className="text-primary" />, label: "Digital Commerce & Paystack" },
               { icon: <Sliders size={16} className="text-primary" />, label: "Admin Back-Offices" },
-              { icon: <ShieldCheck size={16} className="text-accent" />, label: "6 Months Complimentary Support" },
+              { icon: <ShieldCheck size={16} className="text-primary" />, label: "6 Months Complimentary Support" },
             ].map((cap, i) => (
               <motion.div
                 key={cap.label}

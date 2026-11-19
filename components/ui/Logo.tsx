@@ -16,8 +16,8 @@ const Logo: React.FC<LogoProps> = ({
   inverted = false,
 }) => {
   const navyColor = inverted ? "#FFFFFF" : "#0F2744";
-  const sapphireColor = inverted ? "#93C5FD" : "#1E3A8A";
-  const nodeColor = inverted ? "#60A5FA" : "#2563EB";
+  const sapphireColor = inverted ? "#FFFFFF" : "#0F2744";
+  const nodeColor = inverted ? "#FFFFFF" : "#0F2744";
 
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
@@ -57,7 +57,7 @@ const Logo: React.FC<LogoProps> = ({
             inverted ? "text-white" : "text-[#0F2744]"
           }`}
         >
-          LOGIC<span className={inverted ? "text-[#93C5FD]" : "text-[#1E3A8A]"}>GUILD</span>
+          LOGIC<span className={inverted ? "text-white" : "text-[#0F2744]"}>GUILD</span>
         </span>
       )}
     </div>

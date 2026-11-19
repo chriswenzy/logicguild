@@ -55,9 +55,7 @@ export default function AboutPage() {
                 </span>
                 <h1 className="text-4xl sm:text-6xl font-heading font-extrabold text-primary tracking-tight mb-6">
                   Exceptional engineering. <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-accent-subtle">
-                    Dependable partnership.
-                  </span>
+                  Dependable partnership.
                 </h1>
                 <p className="text-text-secondary text-base md:text-lg leading-relaxed mb-10">
                   LOGIC GUILD LIMITED (RC 8969485) is a premier digital engineering

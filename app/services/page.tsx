@@ -79,10 +79,7 @@ export default function ServicesPage() {
               Core Capabilities
             </span>
             <h1 className="text-4xl md:text-6xl font-heading font-extrabold text-primary tracking-tight mb-6">
-              Engineering solutions designed for{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-accent-subtle">
-                measurable business growth
-              </span>
+              Engineering solutions designed for measurable business growth
             </h1>
             <p className="text-text-secondary text-base md:text-lg leading-relaxed">
               We provide turnkey software engineering, digital commerce, and

@@ -46,7 +46,7 @@ const Navbar = () => {
       {/* Top Scroll Progress Indicator */}
       <motion.div
         style={{ scaleX }}
-        className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary via-accent to-accent-subtle origin-left pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary origin-left pointer-events-none"
       />
 
       <div className="container mx-auto px-6 flex justify-between items-center">

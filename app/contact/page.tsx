@@ -39,9 +39,7 @@ export default function ContactPage() {
               </div>
               <h1 className="text-4xl sm:text-5xl font-heading font-extrabold text-primary tracking-tight mb-6">
                 Have a project in mind? <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-accent-subtle">
-                  Let&apos;s build something great.
-                </span>
+                Let&apos;s build something great.
               </h1>
               <p className="text-text-secondary text-base leading-relaxed mb-8">
                 Whether you are launching a new e-commerce website, building a
